@@ -2,8 +2,22 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Carousel } from 'react-responsive-carousel';
 import './homeSlider.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 function HomeSlider() {
+
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    };
+
     return (
         <section className="home-slider position-relative mb-30">
             <div className="container">
@@ -80,49 +94,59 @@ function HomeSlider() {
                         </div>
                     </div>
                     <div className="col-lg-7">
-                          <div className="home-slide-cover mt-30">
+                        <div className="home-slide-cover mt-30">
+
                             <div className="hero-slider-1 style-5 dot-style-1 dot-style-1-position-2">
-                                <div className="single-hero-slider single-animation-wrap"
-                                    style={{ backgroundImage: `url(media/carousel/slider-8.png)` }}>
-                                    <div className="slider-content">
-                                        <a href="product-details.html">
-                                            <h1 className="display-2 mb-40">
-                                                Don’t miss amazing <br />
-                                                grocery deals
-                                            </h1>
-                                        </a>
-                                        <p className="mb-65">Sign up for the daily newsletter</p>
-                                        <form method="POST" className="form-subcriber d-flex selector-1">
-                                            <input type="hidden" name="csrfmiddlewaretoken"
-                                                value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
-                                            <input id="subscribe-input-1" className="form-none" type="email"
-                                                placeholder="Your emaill address" required />
-                                            <button className="btn form-none" type="submit">Subscribe</button>
-                                        </form>
-                                    </div>
-                                </div> 
-                                {/* <div className="single-hero-slider single-animation-wrap"
-                                    style={{backgroundImage: `url(media/carousel/slider-7.png)`}}>
-                                    <div className="slider-content">
-                                        <a href="product-details.html">
-                                            <h1 className="display-2 mb-40">
-                                                Fresh Vegetables Bi<br />
-                                                g discount
-                                            </h1>
-                                        </a>
-                                        <p className="mb-65">Sign up for the daily newsletter</p>
-                                        <form method="POST" className="form-subcriber d-flex selector-1">
-                                            <input type="hidden" name="csrfmiddlewaretoken"
-                                                value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
-                                                <input id="subscribe-input-1" className="form-none" type="email"
-                                                    placeholder="Your emaill address" required />
-                                                <button className="btn form-none" type="submit">Subscribe</button>
-                                        </form>
-                                    </div>
-                                </div> */}
-                     </div>
+                                
+                                    <Slider {...settings}>
+                                        <div>
+                                            <div className="single-hero-slider single-animation-wrap"
+                                                style={{ backgroundImage: `url(media/carousel/slider-8.png)` , position:'relative', }}>
+                                                <div className="slider-content">
+                                                    <a href="product-details.html" style={{zIndex:"98988"}}>
+                                                        <h1 className="display-2 mb-40">
+                                                            Don’t miss amazing <br />
+                                                            grocery deals
+                                                        </h1>
+                                                    </a>
+                                                    <p className="mb-65">Sign up for the daily newsletter</p>
+                                                    <form method="POST" className="form-subcriber d-flex selector-1">
+                                                        <input type="hidden" name="csrfmiddlewaretoken"
+                                                            value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
+                                                        <input id="subscribe-input-1" className="form-none" type="email"
+                                                            placeholder="Your emaill address" required />
+                                                        <button className="btn form-none" type="submit">Subscribe</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="single-hero-slider single-animation-wrap"
+                                                style={{ backgroundImage: `url(media/carousel/slider-7.png)` ,position:'relative',}}>
+                                                <div className="slider-content">
+                                                    <a href="product-details.html">
+                                                        <h1 className="display-2 mb-40">
+                                                            Fresh Vegetables <br/>Big discount
+                                                        </h1>
+                                                    </a>
+                                                    <p className="mb-65">Sign up for the daily newsletter</p>
+                                                    <form method="POST" className="form-subcriber d-flex selector-1">
+                                                        <input type="hidden" name="csrfmiddlewaretoken"
+                                                            value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
+                                                        <input id="subscribe-input-1" className="form-none" type="email"
+                                                            placeholder="Your emaill address" required />
+                                                        <button className="btn form-none" type="submit">Subscribe</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Slider>
+                               
+                            </div>
                             <div className="slider-arrow hero-slider-1-arrow"></div>
-                        </div> 
+                        </div>
+
+
 
                         {/* <Carousel>
                             <div>

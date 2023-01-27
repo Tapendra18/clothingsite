@@ -1,6 +1,10 @@
 import React from "react";
 
+
 function Header() {
+
+   
+
     return (
         <>
             <header className="header-area header-style-1 header-style-5 header-height-2">
@@ -67,7 +71,7 @@ function Header() {
                             </div>
                             <div className="header-right">
                                 <div className="search-style-2">
-                                    <form action="/product-search/" method="post">
+                                    <form action="product-search/" method="post">
                                         <input type="hidden" name="csrfmiddlewaretoken"
                                             value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
                                         <select name="category-select" className="select-active  category-search"
