@@ -1,0 +1,12 @@
+.setcarousel div{
+    display: inline !important;
+}
+
+.nav-tabs{
+    border-bottom:none;
+}
+
+.nav-tabs.links .nav-link{
+    border: none !important;
+    padding: none !important;
+}
