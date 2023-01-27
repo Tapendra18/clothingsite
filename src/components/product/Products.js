@@ -1,4 +1,5 @@
 import React from "react";
+import './products.css'
 
 function Products() {
     return (
@@ -12,7 +13,7 @@ function Products() {
 
                     <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div className="row product-grid-4">
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".0s">
                                     <div className="product-img-action-wrap">
@@ -60,7 +61,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".1s">
                                     <div className="product-img-action-wrap">
@@ -105,7 +106,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".2s">
                                     <div className="product-img-action-wrap">
@@ -155,7 +156,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".3s">
                                     <div className="product-img-action-wrap">
@@ -203,7 +204,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".4s">
                                     <div className="product-img-action-wrap">
@@ -251,7 +252,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".5s">
                                     <div className="product-img-action-wrap">
@@ -299,7 +300,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".6s">
                                     <div className="product-img-action-wrap">
@@ -349,7 +350,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".7s">
                                     <div className="product-img-action-wrap">
@@ -398,7 +399,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".8s">
                                     <div className="product-img-action-wrap">
@@ -448,7 +449,7 @@ function Products() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                            <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                 <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                     data-wow-delay=".9s">
                                     <div className="product-img-action-wrap">

@@ -1,4 +1,5 @@
 import React from "react";
+import '../product/products.css'
 
 function Footer() {
     return (
@@ -32,7 +33,7 @@ function Footer() {
             <section className="featured section-padding">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0 popular">
                             <div className="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
                                 data-wow-delay="0">
                                 <div className="banner-icon">
@@ -44,7 +45,7 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                             <div className="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".1s">
                                 <div className="banner-icon">
@@ -56,7 +57,7 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                             <div className="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".2s">
                                 <div className="banner-icon">
@@ -68,7 +69,7 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                             <div className="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".3s">
                                 <div className="banner-icon">
@@ -80,7 +81,7 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                             <div className="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".4s">
                                 <div className="banner-icon">
@@ -92,7 +93,7 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
+                        <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none popular">
                             <div className="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".5s">
                                 <div className="banner-icon">
@@ -164,7 +165,9 @@ function Footer() {
                                 <li><a href="/shop/super/health-personal-care">Health &amp; Personal Care</a></li>
                             </ul>
                         </div>
-                        <div className="footer-link-widget widget-install-app col wow animate__animated animate__fadeInUp"
+                        
+                    </div>
+                    <div className="footer-link-widget widget-install-app col wow animate__animated animate__fadeInUp"
                             data-wow-delay=".4s">
                             <h4 className="widget-title">Install App</h4>
                             <p className="">From App Store or Google Play</p>
@@ -177,7 +180,6 @@ function Footer() {
                             <p className="mb-20">Secured Payment Gateways</p>
                             <img className="" src="static/assets/imgs/theme/payment-method.png" alt="" />
                         </div>
-                    </div>
                 </div>
             </section>
             <div className="container pb-30 wow animate__animated animate__fadeInUp" data-wow-delay="0">

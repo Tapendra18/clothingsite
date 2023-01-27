@@ -8,5 +8,9 @@
 
 .nav-tabs.links .nav-link{
     border: none !important;
-    padding: none !important;
+    /* padding: none !important; */
+}
+
+.section-title h3{
+    font-size: 36px;
 }
