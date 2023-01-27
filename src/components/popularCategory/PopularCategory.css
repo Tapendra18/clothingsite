@@ -14,3 +14,20 @@
 .section-title h3{
     font-size: 36px;
 }
+.hello .slick-next:before {
+    font-size: 25px !important;
+    color: black;
+}
+.hello .slick-prev:before{
+    font-size: 25px !important;
+    color: black;
+                                                                  
+}
+.hello .slick-prev{
+    right:10px !important;
+}
+.hello .slick-slide {
+    margin-right:12px;
+    margin-left:12px;
+    height: 180px !important;
+}
