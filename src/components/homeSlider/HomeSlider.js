@@ -1,6 +1,4 @@
 import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
 import './homeSlider.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -97,7 +95,6 @@ function HomeSlider() {
                         <div className="home-slide-cover mt-30">
 
                             <div className="hero-slider-1 style-5 dot-style-1 dot-style-1-position-2">
-                                
                                     <Slider {...settings}>
                                         <div>
                                             <div className="single-hero-slider single-animation-wrap"

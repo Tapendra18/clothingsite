@@ -3,8 +3,6 @@ import React from "react";
 
 function Header() {
 
-   
-
     return (
         <>
             <header className="header-area header-style-1 header-style-5 header-height-2">
