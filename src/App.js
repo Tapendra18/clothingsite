@@ -7,6 +7,8 @@ import TermOfServices from "./components/termOfServices/TermOfServices";
 import RefundPolicy from "./components/refundpolicy/RefundPolicy";
 import Cart from "./components/cart/Cart";
 import VenderRegister from "./components/venderRegister/VenderRegister";
+import VendorLogin from "./components/vendorLogin/VendorLogin";
+import FoodBeverage from "./components/food-beverage/FoodBeverage";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/supplier-register" element={<VenderRegister />} />
+        <Route path="/supplier-login" element={<VendorLogin />} />
+        <Route path="/foodbeverage" element={<FoodBeverage />} />
       </Routes>
     </>
   );
