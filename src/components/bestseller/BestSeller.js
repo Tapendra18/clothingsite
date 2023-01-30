@@ -6,7 +6,7 @@ function SampleNextArrow(props) {
     return (
       <div
         className={className }
-        style={{ ...style, display: "block",  top: 200,
+        style={{ ...style, display: "block",  top: 230,
         right: 0  ,width:'40px' ,height : '40px' , fontSize:'40px' }}
         onClick={onClick}
       />
@@ -18,7 +18,7 @@ function SampleNextArrow(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block" ,  top: 200, left: 30 ,
+        style={{ ...style, display: "block" ,  top: 230, left: 10 ,
          width:'40px' ,height : '40px' , zIndex:'10' }}
         onClick={onClick}
       />
@@ -32,7 +32,7 @@ function BestSeller() {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 3,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     autoplaySpeed: 1222200,
