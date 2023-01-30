@@ -110,8 +110,8 @@ function Header() {
                                             <a href="/dashboard/"><span className="lable ml-0">Account</span></a>
                                             <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                                 <ul>
-                                                    <li><a href="/login/"><i className="fi fi-rs-user mr-10"></i>Login</a></li>
-                                                    <li><a href="/register/"><i className="fi fi-rs-user-add mr-10"></i>Register</a>
+                                                    <li><a href="/login"><i className="fi fi-rs-user mr-10"></i>Login</a></li>
+                                                    <li><a href="/register"><i className="fi fi-rs-user-add mr-10"></i>Register</a>
                                                     </li>
                                                 </ul>
                                             </div>
