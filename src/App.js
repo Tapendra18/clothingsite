@@ -11,6 +11,12 @@ import Cart from "./components/cart/Cart";
 import VenderRegister from "./components/venderRegister/VenderRegister";
 import VendorLogin from "./components/vendorLogin/VendorLogin";
 import FoodBeverage from "./components/food-beverage/FoodBeverage";
+import BeautyFragances from "./components/beauty-fragrances/BeautyFragances";
+import OfficeStationary from "./components/office-stationery/OfficeStationary";
+import ConsumerElectronics from "./components/consumer-electronics/ConsumerElectronics";
+import FashionAccessories from "./components/fashion-accessories/FashionAccessories";
+import HomeFurniture from "./components/home-furniture/HomeFurniture";
+import Health from "./components/health-personal-care/Health";
 
 function App() {
   return (
@@ -28,6 +34,11 @@ function App() {
         <Route path="/supplier-register" element={<VenderRegister />} />
         <Route path="/supplier-login" element={<VendorLogin />} />
         <Route path="/foodbeverage" element={<FoodBeverage />} />
+        <Route path="/beautyfragances" element={<BeautyFragances />} />
+        <Route path="/officestationary" element={<OfficeStationary />} />
+        <Route path="/consumer" element={<ConsumerElectronics />} />
+        <Route path="/furniture" element={<HomeFurniture />} />
+        <Route path="/health" element={<Health />} />
       </Routes>
     </>
   );

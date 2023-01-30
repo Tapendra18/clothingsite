@@ -1,21 +1,21 @@
-import React from 'react';
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import React from 'react'
+import Footer from '../footer/Footer'
+import Header from '../header/Header'
 
-const FoodBeverage = () => {
+const HomeFurniture = () => {
     return (
-        <>
-        <Header/>
+        <div>
+            <Header/>
             <main className="main">
                 <div className="page-header mt-30 mb-50">
                     <div className="container">
                         <div className="archive-header">
                             <div className="row align-items-center">
                                 <div className="col-xl-3">
-                                    <h1 className="mb-15">Food &amp; Beverage</h1>
+                                    <h1 className="mb-15">Home &amp; Furniture</h1>
                                     <div className="breadcrumb">
                                         <a href="/" rel="nofollow"><i className="fi-rs-home mr-5"></i>Home</a>
-                                        <span></span> Shop <span></span> Food &amp; Beverage
+                                        <span></span> Shop <span></span> Home &amp; Furniture
                                     </div>
                                 </div>
 
@@ -70,33 +70,8 @@ const FoodBeverage = () => {
                             <div className="sidebar-widget widget-category-2 mb-30">
                                 <h5 className="section-title style-1 mb-30">Main Category</h5>
                                 <ul className="ul-category">
-                                    <li value="8">
-                                        <a href="/shop/main/custard-apple"> <img src="media/categories/main/imgs/cat-5.png" alt="Custard apple" />Custard apple</a>
-                                    </li>
-                                    <li value="9">
-                                        <a href="/shop/main/coffe-tea"> <img src="media/categories/main/imgs/cat-14.png" alt="Coffe &amp; Tea" />Coffe &amp; Tea</a>
-                                    </li>
-
-                                    <li value="17">
-                                        <a href="/shop/main/cake-milk"> <img src="media/categories/main/imgs/cat-13_AYk2np9.png" alt="Cake &amp; Milk" />Cake &amp; Milk</a>
-                                    </li>
-                                    <li value="18">
-                                        <a href="/shop/main/oganic-kiwi"> <img src="media/categories/main/imgs/cat-12_SwJb7aF.png" alt="Oganic Kiwi" />Oganic Kiwi</a>
-                                    </li>
-                                    <li value="20">
-                                        <a href="/shop/main/red-apple"> <img src="media/categories/main/imgs/cat-9_Ks6xB71.png" alt="Red Apple" />Red Apple</a>
-                                    </li>
-                                    <li value="21">
-                                        <a href="/shop/main/snack"> <img src="media/categories/main/imgs/cat-3_1.png" alt="Snack" />Snack</a>
-                                    </li>
-                                    <li value="22">
-                                        <a href="/shop/main/vegetables"> <img src="media/categories/main/imgs/cat-1_aibGMBs.png" alt="Vegetables" />Vegetables</a>
-                                    </li>
-                                    <li value="23">
-                                        <a href="/shop/main/strawberry"> <img src="media/categories/main/imgs/cat-2_gcBQ13i.png" alt="Strawberry" />Strawberry</a>
-                                    </li>
-                                    <li value="24">
-                                        <a href="/shop/main/black-plum"> <img src="media/categories/main/imgs/cat-4.png" alt="Black plum" />Black plum</a>
+                                    <li value="29">
+                                        <a href="/shop/main/household-supplies"> <img src="media/categories/main/imgs/3e50c6fd349f94d6fd41961681e84725.webp" alt="Household Supplies" />Household Supplies</a>
                                     </li>
                                 </ul>
                             </div>
@@ -106,37 +81,37 @@ const FoodBeverage = () => {
                                 <h5 className="section-title style-1 mb-30">New products</h5>
                                 <div className="single-post clearfix">
                                     <div className="image">
-                                        <img src="media/products/imgs/product-1-1_mVTpJyf.jpg"  style={{width:"80px",height:"80px"}} alt="#" />
+                                        <img src="media/products/imgs/product-9-1.jpg" style={{width:"80px",height:"80px"}} alt="#" />
+                                    </div>
+                                    <div className="content pt-10">
+                                        <h5><a href="/product-details/seeds-of-change-organic-quinoa-brown-red-rice-myixb">All Natural I…</a></h5>
+                                        <p className="price mb-0 mt-5">$12.0</p>
+                                        <div className="product-rate">
+                                            <div className="product-rating" style={{width: "80%"}}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="single-post clearfix">
+                                    <div className="image">
+                                        <img src="media/products/imgs/product-4-1.jpg" style={{width:"80px",height:"80px"}} alt="#" />
+                                    </div>
+                                    <div className="content pt-10">
+                                        <h5><a href="product-details/canada-dry-ginger-ale-2-l-bottle-200ml-400g">Canada Dry Gi…</a></h5>
+                                        <p className="price mb-0 mt-5">$15.0</p>
+                                        <div className="product-rate">
+                                            <div className="product-rating" style={{width: "80%"}}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="single-post clearfix">
+                                    <div className="image">
+                                        <img src="media/products/imgs/product-1-1_mVTpJyf.jpg" style={{width:"80px",height:"80px"}} alt="#" />
                                     </div>
                                     <div className="content pt-10">
                                         <h5><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup">Haagen-Dazs C…</a></h5>
                                         <p className="price mb-0 mt-5">$13.0</p>
                                         <div className="product-rate">
                                             <div className="product-rating" style={{width: "0%"}}></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="single-post clearfix">
-                                    <div className="image">
-                                        <img src="media/products/imgs/product-7-1.jpg" style={{width:"80px",height:"80px"}} alt="#" />
-                                    </div>
-                                    <div className="content pt-10">
-                                        <h5><a href="/product-details/foster-farms-takeout-crispy-classNameic-buffalo-wings">Foster Farms …</a></h5>
-                                        <p className="price mb-0 mt-5">$14.0</p>
-                                        <div className="product-rate">
-                                            <div className="product-rating" style={{width: "67%"}}></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="single-post clearfix">
-                                    <div className="image">
-                                        <img src="media/products/imgs/product-5-1.jpg" style={{width:"80px",height:"80px"}} alt="#" />
-                                    </div>
-                                    <div className="content pt-10">
-                                        <h5><a href="/product-details/chobani-complete-vanilla-greek-yogurt">Chobani Compl…</a></h5>
-                                        <p className="price mb-0 mt-5">$14.0</p>
-                                        <div className="product-rate">
-                                            <div className="product-rating" style={{width: "60%"}}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -155,8 +130,8 @@ const FoodBeverage = () => {
                 </div>
             </main>
             <Footer/>
-        </>
+        </div>
     )
 }
 
-export default FoodBeverage
+export default HomeFurniture
