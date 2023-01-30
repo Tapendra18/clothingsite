@@ -16,11 +16,12 @@
 }
 .hello .slick-next:before {
     font-size: 25px !important;
-    color: black;
+    color: #3bb77e;
+    
 }
 .hello .slick-prev:before{
     font-size: 25px !important;
-    color: black;
+    color: #3bb77e;
                                                                   
 }
 .hello .slick-prev{

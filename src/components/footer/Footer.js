@@ -138,31 +138,31 @@ function Footer() {
                         <div className="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                             <h4 className="widget-title">Company</h4>
                             <ul className="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="/pages/about-us">About Us</a></li>
-                                <li><a href="/pages/terms-of-service">Terms Of Service</a></li>
-                                <li><a href="/pages/refund-policy">Refund Policy</a></li>
+                                <li><a href="/about-us">About Us</a></li>
+                                <li><a href="pages/terms-of-service">Terms Of Service</a></li>
+                                <li><a href="pages/refund-policy">Refund Policy</a></li>
                             </ul>
                         </div>
                         <div className="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                             <h4 className="widget-title">Pages</h4>
                             <ul className="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="/cart/">View Cart</a></li>
+                                <li><a href="cart/">View Cart</a></li>
 
-                                <li><a href="/supplier-register/">Become a Vendor</a></li>
-                                <li><a href="/supplier-login/">Vendor Login</a></li>
-                                <li><a href="/contact/">Contact Us</a></li>
+                                <li><a href="supplier-register/">Become a Vendor</a></li>
+                                <li><a href="supplier-login/">Vendor Login</a></li>
+                                <li><a href="contact/">Contact Us</a></li>
                             </ul>
                         </div>
                         <div className="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
                             <h4 className="widget-title">Categories</h4>
                             <ul className="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="/shop/super/food-beverage">Food &amp; Beverage</a></li>
-                                <li><a href="/shop/super/beauty-fragrances">Beauty &amp; Fragrances</a></li>
-                                <li><a href="/shop/super/office-stationery">Office &amp; Stationery</a></li>
-                                <li><a href="/shop/super/consumer-electronics">Consumer Electronics</a></li>
-                                <li><a href="/shop/super/fashion-accessories">Fashion &amp; Accessories</a></li>
-                                <li><a href="/shop/super/home-furniture">Home &amp; Furniture</a></li>
-                                <li><a href="/shop/super/health-personal-care">Health &amp; Personal Care</a></li>
+                                <li><a href="shop/super/food-beverage">Food &amp; Beverage</a></li>
+                                <li><a href="shop/super/beauty-fragrances">Beauty &amp; Fragrances</a></li>
+                                <li><a href="shop/super/office-stationery">Office &amp; Stationery</a></li>
+                                <li><a href="shop/super/consumer-electronics">Consumer Electronics</a></li>
+                                <li><a href="shop/super/fashion-accessories">Fashion &amp; Accessories</a></li>
+                                <li><a href="shop/super/home-furniture">Home &amp; Furniture</a></li>
+                                <li><a href="shop/super/health-personal-care">Health &amp; Personal Care</a></li>
                             </ul>
                         </div>
                         

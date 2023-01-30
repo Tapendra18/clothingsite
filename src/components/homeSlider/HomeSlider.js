@@ -95,70 +95,52 @@ function HomeSlider() {
                         <div className="home-slide-cover mt-30">
 
                             <div className="hero-slider-1 style-5 dot-style-1 dot-style-1-position-2">
-                                    <Slider {...settings}>
-                                        <div>
-                                            <div className="single-hero-slider single-animation-wrap"
-                                                style={{ backgroundImage: `url(media/carousel/slider-8.png)` , position:'relative', }}>
-                                                <div className="slider-content">
-                                                    <a href="product-details.html" style={{zIndex:"98988"}}>
-                                                        <h1 className="display-2 mb-40">
-                                                            Don’t miss amazing <br />
-                                                            grocery deals
-                                                        </h1>
-                                                    </a>
-                                                    <p className="mb-65">Sign up for the daily newsletter</p>
-                                                    <form method="POST" className="form-subcriber d-flex selector-1">
-                                                        <input type="hidden" name="csrfmiddlewaretoken"
-                                                            value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
-                                                        <input id="subscribe-input-1" className="form-none" type="email"
-                                                            placeholder="Your emaill address" required />
-                                                        <button className="btn form-none" type="submit">Subscribe</button>
-                                                    </form>
-                                                </div>
+                                <Slider {...settings}>
+                                    <div>
+                                        <div className="single-hero-slider single-animation-wrap"
+                                            style={{ backgroundImage: `url(media/carousel/slider-8.png)`, position: 'relative', }}>
+                                            <div className="slider-content">
+                                                <a href="product-details.html" style={{ zIndex: "98988" }}>
+                                                    <h1 className="display-2 mb-40">
+                                                        Don’t miss amazing <br />
+                                                        grocery deals
+                                                    </h1>
+                                                </a>
+                                                <p className="mb-65">Sign up for the daily newsletter</p>
+                                                <form method="POST" className="form-subcriber d-flex selector-1">
+                                                    <input type="hidden" name="csrfmiddlewaretoken"
+                                                        value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
+                                                    <input id="subscribe-input-1" className="form-none" type="email"
+                                                        placeholder="Your emaill address" required />
+                                                    <button className="btn form-none" type="submit">Subscribe</button>
+                                                </form>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div className="single-hero-slider single-animation-wrap"
-                                                style={{ backgroundImage: `url(media/carousel/slider-7.png)` ,position:'relative',}}>
-                                                <div className="slider-content">
-                                                    <a href="product-details.html">
-                                                        <h1 className="display-2 mb-40">
-                                                            Fresh Vegetables <br/>Big discount
-                                                        </h1>
-                                                    </a>
-                                                    <p className="mb-65">Sign up for the daily newsletter</p>
-                                                    <form method="POST" className="form-subcriber d-flex selector-1">
-                                                        <input type="hidden" name="csrfmiddlewaretoken"
-                                                            value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
-                                                        <input id="subscribe-input-1" className="form-none" type="email"
-                                                            placeholder="Your emaill address" required />
-                                                        <button className="btn form-none" type="submit">Subscribe</button>
-                                                    </form>
-                                                </div>
+                                    </div>
+                                    <div>
+                                        <div className="single-hero-slider single-animation-wrap"
+                                            style={{ backgroundImage: `url(media/carousel/slider-7.png)`, position: 'relative', }}>
+                                            <div className="slider-content">
+                                                <a href="product-details.html">
+                                                    <h1 className="display-2 mb-40">
+                                                        Fresh Vegetables <br />Big discount
+                                                    </h1>
+                                                </a>
+                                                <p className="mb-65">Sign up for the daily newsletter</p>
+                                                <form method="POST" className="form-subcriber d-flex selector-1">
+                                                    <input type="hidden" name="csrfmiddlewaretoken"
+                                                        value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
+                                                    <input id="subscribe-input-1" className="form-none" type="email"
+                                                        placeholder="Your emaill address" required />
+                                                    <button className="btn form-none" type="submit">Subscribe</button>
+                                                </form>
                                             </div>
                                         </div>
-                                    </Slider>
-                               
+                                    </div>
+                                </Slider>
                             </div>
                             <div className="slider-arrow hero-slider-1-arrow"></div>
                         </div>
-
-
-
-                        {/* <Carousel>
-                            <div>
-                                <img style={{backgroundImage: `url(media/carousel/slider-7.png)`}} alt="slider-7" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img style={{backgroundImage: `url(media/carousel/slider-7.png)`}} alt="slider-7" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img style={{backgroundImage: `url(media/carousel/slider-7.png)`}} alt="slider-7" />
-                                <p className="legend">Legend 3</p>
-                            </div>
-                        </Carousel> */}
                     </div>
                     <div className="col-lg-3">
                         <div className="row">
