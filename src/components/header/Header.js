@@ -97,11 +97,11 @@ function Header() {
                                 <div className="header-action-right">
                                     <div className="header-action-2">
                                         <div className="header-action-icon-2">
-                                            <a className="mini-cart-icon" href="/cart/">
+                                            <a className="mini-cart-icon" href="/cart">
                                                 <img alt="Nest" src="static/assets/imgs/theme/icons/icon-cart.svg" />
                                                 <span className="pro-count blue">0</span>
                                             </a>
-                                            <a href="/cart/"><span className="lable">Cart</span></a>
+                                            <a href="/cart"><span className="lable">Cart</span></a>
                                         </div>
                                         <div className="header-action-icon-2">
                                             <a href="/dashboard/">
@@ -329,7 +329,7 @@ function Header() {
                                         </a>
                                     </div>
                                     <div className="header-action-icon-2">
-                                        <a className="mini-cart-icon" href="/cart/">
+                                        <a className="mini-cart-icon" href="/cart">
                                             <img alt="Nest" src="static/assets/imgs/theme/icons/icon-cart.svg" />
                                             <span className="pro-count white">0</span>
                                         </a>
