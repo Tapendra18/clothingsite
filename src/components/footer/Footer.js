@@ -3,7 +3,7 @@ import '../product/products.css'
 
 function Footer() {
     return (
-        <footer className="main">
+        <footer className="main" style={{marginTop:"8px"}}>
             <section className="newsletter mb-15 wow animate__animated animate__fadeIn">
                 <div className="container">
                     <div className="row">
@@ -139,18 +139,18 @@ function Footer() {
                             <h4 className="widget-title">Company</h4>
                             <ul className="footer-list mb-sm-5 mb-md-0">
                                 <li><a href="/about-us">About Us</a></li>
-                                <li><a href="pages/terms-of-service">Terms Of Service</a></li>
+                                <li><a href="/terms-of-service">Terms Of Service</a></li>
                                 <li><a href="pages/refund-policy">Refund Policy</a></li>
                             </ul>
                         </div>
                         <div className="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                             <h4 className="widget-title">Pages</h4>
                             <ul className="footer-list mb-sm-5 mb-md-0">
-                                <li><a href="cart/">View Cart</a></li>
+                                <li><a href="/cart">View Cart</a></li>
 
-                                <li><a href="supplier-register/">Become a Vendor</a></li>
-                                <li><a href="supplier-login/">Vendor Login</a></li>
-                                <li><a href="contact/">Contact Us</a></li>
+                                <li><a href="/supplier-register">Become a Vendor</a></li>
+                                <li><a href="/supplier-login">Vendor Login</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
                             </ul>
                         </div>
                         <div className="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
