@@ -24,7 +24,7 @@
                                                                   
 }
 .hello .slick-prev{
-    right:10px !important;
+    bottom:10px !important;
 }
 .hello .slick-slide {
     margin-right:12px;

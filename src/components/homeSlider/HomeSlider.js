@@ -13,7 +13,7 @@ function HomeSlider() {
         slidesToScroll: 1,
         dots: true,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 1000,
     };
 
     return (

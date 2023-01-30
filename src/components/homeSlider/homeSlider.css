@@ -16,4 +16,6 @@ a{
 .add{
     color: #3bb77e;
 }
-
+.hero-slider-1 .slick-dots li button:before {
+    content: '' !important;
+}

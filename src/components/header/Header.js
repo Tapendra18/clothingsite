@@ -1,4 +1,5 @@
 import React from "react";
+import './Header.css'
 
 
 function Header() {
@@ -122,7 +123,7 @@ function Header() {
                         </div>
                     </div>
                 </div>
-                <div className="header-bottom header-bottom-bg-color sticky-bar">
+                <div className="header-bottom header-bottom-bg-color sticky-bar ">
                     <div className="container">
                         <div className="header-wrap header-space-between position-relative">
                             <div className="logo logo-width-1 d-block d-lg-none">
