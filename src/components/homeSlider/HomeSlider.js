@@ -13,7 +13,7 @@ function HomeSlider() {
         slidesToScroll: 1,
         dots: true,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 4000,
     };
 
     return (
@@ -98,9 +98,9 @@ function HomeSlider() {
                                 <Slider {...settings}>
                                     <div>
                                         <div className="single-hero-slider single-animation-wrap"
-                                            style={{ backgroundImage: `url(media/carousel/slider-8.png)`, position: 'relative', }}>
+                                            style={{ backgroundImage: `url(media/carousel/slider-1.png)`, position: 'relative', }}>
                                             <div className="slider-content">
-                                                <a href="product-details.html" style={{ zIndex: "98988" }}>
+                                                <a href="product-details.html" style={{ zIndex: "98988" ,}}>
                                                     <h1 className="display-2 mb-40">
                                                         Don’t miss amazing <br />
                                                         grocery deals
@@ -119,15 +119,15 @@ function HomeSlider() {
                                     </div>
                                     <div>
                                         <div className="single-hero-slider single-animation-wrap"
-                                            style={{ backgroundImage: `url(media/carousel/slider-7.png)`, position: 'relative', }}>
+                                            style={{ backgroundImage: `url(media/carousel/slider-2.png)`, position: 'relative'}}>
                                             <div className="slider-content">
                                                 <a href="product-details.html">
-                                                    <h1 className="display-2 mb-40">
-                                                        Fresh Vegetables <br />Big discount
+                                                    <h1 className="display-2 mb-40" >
+                                                        Up To 700 Shooping <br />Big discount
                                                     </h1>
                                                 </a>
-                                                <p className="mb-65">Sign up for the daily newsletter</p>
-                                                <form method="POST" className="form-subcriber d-flex selector-1">
+                                                <p className="mb-65" >Sign up for the daily newsletter</p>
+                                                <form className="form-subcriber d-flex selector-1">
                                                     <input type="hidden" name="csrfmiddlewaretoken"
                                                         value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
                                                     <input id="subscribe-input-1" className="form-none" type="email"
