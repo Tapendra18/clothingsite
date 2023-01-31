@@ -1,8 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../header/Header';
+import { ToastContainer, toast } from 'react-toastify';
 import Footer from '../footer/Footer';
 
 const Login = () => {
+
+    const [data, setData] = useState({
+        email:""  ,
+        password:"" 
+    });
+    console.log(data);
+
+    const handleChange = (e)=>{
+        const {name , value} = e.target;
+        setData({...data,[name]:value});
+    }
+
+    const handleSubmit = (e)=>{
+    e.preventDefault();
+    const {email , password} = data;
+
+    if(email === ""){
+        toast.error("Enter Your Name");
+      }else if(email === ""){
+        toast.error("Enter Your Email")
+      }else if(!email.includes("@")){
+        toast.error("Enter Valid Email")
+      }else if(password === ""){
+        toast.error("Enter Your Password")
+      }else if(password.length < 6){
+        toast.error("password length minimum 6 character")
+      }else{
+        // const response = await registerfunction(inputdata);
+        
+        // if(response.status === 200){
+        //   setInputdata({...inputdata,fname:"",email:"",password:""});
+        //   navigate("/")
+        // }else{
+        //   toast.error(response.response.data.error);
+        // }
+        toast.success("login Done");
+      }
+    }
+
     return (
         <div>
             <Header />
@@ -28,21 +68,21 @@ const Login = () => {
                                             <div className="padding_eight_all bg-white">
                                                 <div className="heading_s1">
                                                     <h1 className="mb-5">Login</h1>
-                                                    <p className="mb-30">Don't have an account? <a href="../register/index.html">Create here</a></p>
+                                                    <p className="mb-30">Don't have an account? <a href="/register">Create here</a></p>
                                                 </div>
-                                                <form method="post">
+                                                <form onSubmit={handleSubmit}>
                                                     <input type="hidden" name="csrfmiddlewaretoken" value="ht0CZvGH4f9HBk3D2RqdtLdMVc4FlJKNOfi4BBnXViQAkMP1mCQk3xLW95h8jlii" />
                                                     <div id="div_id_username" className="ctrlHolder">
                                                         <label htmlFor="id_username" className="requiredField">
                                                             Username or Email<span className="asteriskField">*</span>
                                                         </label>
-                                                        <input type="text" name="username" value="selem" className="textinput textInput" required id="id_username" />
+                                                        <input type="text" name="email" className="textinput textInput" id="id_username" onClick={handleChange} />
                                                     </div>
                                                     <div id="div_id_password" className="ctrlHolder">
                                                         <label htmlFor="id_password" className="requiredField">
                                                             Password<span className="asteriskField">*</span>
                                                         </label>
-                                                        <input type="password" name="password" value="Test123456!@#" className="textinput textInput" required id="id_password" />
+                                                        <input type="password" name="password" className="textinput textInput" id="id_password" onClick={handleChange}/>
                                                     </div>
                                                     <div className="login_footer form-group mb-50">
                                                         <div className="chek-form">
@@ -56,6 +96,7 @@ const Login = () => {
                                                     <div className="form-group">
                                                         <button type="submit" className="btn btn-heading btn-block hover-up" name="login">Log in</button>
                                                     </div>
+                                                    <ToastContainer/>
                                                 </form>
                                             </div>
                                         </div>
