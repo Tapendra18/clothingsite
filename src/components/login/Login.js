@@ -6,41 +6,41 @@ import Footer from '../footer/Footer';
 const Login = () => {
 
     const [data, setData] = useState({
-        email:""  ,
-        password:"" 
+        email: "",
+        password: ""
     });
     console.log(data);
 
-    const handleChange = (e)=>{
-        const {name , value} = e.target;
-        setData({...data,[name]:value});
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setData({ ...data, [name]: value });
     }
 
-    const handleSubmit = (e)=>{
-    e.preventDefault();
-    const {email , password} = data;
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { email, password } = data;
 
-    if(email === ""){
-        toast.error("Enter Your Name");
-      }else if(email === ""){
-        toast.error("Enter Your Email")
-      }else if(!email.includes("@")){
-        toast.error("Enter Valid Email")
-      }else if(password === ""){
-        toast.error("Enter Your Password")
-      }else if(password.length < 6){
-        toast.error("password length minimum 6 character")
-      }else{
-        // const response = await registerfunction(inputdata);
-        
-        // if(response.status === 200){
-        //   setInputdata({...inputdata,fname:"",email:"",password:""});
-        //   navigate("/")
-        // }else{
-        //   toast.error(response.response.data.error);
-        // }
-        toast.success("login Done");
-      }
+        if (email === "") {
+            toast.error("Enter Your Name");
+        } else if (email === "") {
+            toast.error("Enter Your Email")
+        } else if (!email.includes("@")) {
+            toast.error("Enter Valid Email")
+        } else if (password === "") {
+            toast.error("Enter Your Password")
+        } else if (password.length < 6) {
+            toast.error("password length minimum 6 character")
+        } else {
+            // const response = await registerfunction(inputdata);
+
+            // if(response.status === 200){
+            //   setInputdata({...inputdata,fname:"",email:"",password:""});
+            //   navigate("/")
+            // }else{
+            //   toast.error(response.response.data.error);
+            // }
+            toast.success("login Done");
+        }
     }
 
     return (
@@ -76,13 +76,16 @@ const Login = () => {
                                                         <label htmlFor="id_username" className="requiredField">
                                                             Username or Email<span className="asteriskField">*</span>
                                                         </label>
-                                                        <input type="text" name="email" className="textinput textInput" id="id_username" onClick={handleChange} />
+                                                        <input type="text" name="email" className="textinput textInput" id="id_username" onChange={handleChange} />
+                                                        <ToastContainer />
+
                                                     </div>
                                                     <div id="div_id_password" className="ctrlHolder">
                                                         <label htmlFor="id_password" className="requiredField">
                                                             Password<span className="asteriskField">*</span>
                                                         </label>
-                                                        <input type="password" name="password" className="textinput textInput" id="id_password" onClick={handleChange}/>
+                                                        <ToastContainer />
+                                                        <input type="password" name="password" className="textinput textInput" id="id_password" onChange={handleChange} />
                                                     </div>
                                                     <div className="login_footer form-group mb-50">
                                                         <div className="chek-form">
@@ -94,9 +97,8 @@ const Login = () => {
                                                         <a className="text-muted" href="../password-reset/index.html">Forgot password?</a>
                                                     </div>
                                                     <div className="form-group">
-                                                        <button type="submit" className="btn btn-heading btn-block hover-up" name="login">Log in</button>
+                                                        <button className="btn btn-heading btn-block hover-up" name="login">Log in</button>
                                                     </div>
-                                                    <ToastContainer/>
                                                 </form>
                                             </div>
                                         </div>
