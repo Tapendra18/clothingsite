@@ -1,8 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import { toast , ToastContainer} from 'react-toastify';
 
 const Register = () => {
+
+    const [data , setData] = useState({
+        username:"",
+        email:"",
+        password:"",
+        confirmpassword:""
+    });
+    // console.log(data);
+
+    const handleChange = (e)=>{
+        const {name , value} = e.target;
+        setData({...data , [name]:value});
+    };
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        const {username, email , password, confirmpassword}= data;
+
+        if(email=== ""){
+            toast.error("Enter Your Name");
+        }else if(!email.includes("@")){
+            toast.error("Enter Valid Email");
+        }else if (username === ""){
+            toast.error("Enter Your Username");
+        }else if(password === ""){
+            toast.error("Enter Your Password");
+        }else if(password.length < 6){
+            toast.error("Password length minimum 6 character");
+        }else if(confirmpassword === ""){
+            toast.error("Enter Confirm Password");
+        }else if(confirmpassword.length < 6){
+            toast.error("Confirm password length minimum 6 character");
+        }else{
+            toast.success("Register Success");
+        }
+    }
+
     return (
         <div>
             <Header/>
@@ -27,32 +65,32 @@ const Register = () => {
                                                     <h1 className="mb-5">Create an Account</h1>
                                                     <p className="mb-30">Already have an account? <a href="/login/">Login</a></p>
                                                 </div>
-                                                <form method="post">
+                                                <form onSubmit={handleSubmit}>
                                                     <input type="hidden" name="csrfmiddlewaretoken" value="PYgIim5z3aB1PPjFlT3Sgon9CPA2fmr01rYyi4FTkf4SXUS7iYuOfLbntRMxsrSg"/>
                                                         <div id="div_id_username" className="ctrlHolder">
                                                             <label for="id_username" className="requiredField">
                                                                 Username<span className="asteriskField">*</span>
                                                             </label>
-                                                            <input type="text" name="username" className="form-control textinput textInput" maxlength="150" required id="id_username"/>
+                                                            <input type="text" name="username" className="form-control textinput textInput" id="id_username" onChange={handleChange}/>
                                                                 <div id="hint_id_username" className="formHint">usernames can't contain spaces or @/./+/-/_ characters .</div>
                                                         </div>
                                                         <div id="div_id_email" className="ctrlHolder">
                                                             <label for="id_email">
                                                                 Email address
                                                             </label>
-                                                            <input type="email" name="email" maxlength="254" className="emailinput" id="id_email"/>
+                                                            <input type="email" name="email" className="emailinput" id="id_email" onChange={handleChange}/>
                                                         </div>
                                                         <div id="div_id_password1" className="ctrlHolder">
                                                             <label for="id_password1" className="requiredField">
                                                                 password<span className="asteriskField">*</span>
                                                             </label>
-                                                            <input type="password" name="password1" minlength="8" className="textinput textInput" required id="id_password1"/>
+                                                            <input type="password" name="password" className="textinput textInput" id="id_password1" onChange={handleChange}/>
                                                         </div>
                                                         <div id="div_id_password2" className="ctrlHolder">
                                                             <label for="id_password2" className="requiredField">
                                                                 password confirmation<span className="asteriskField">*</span>
                                                             </label>
-                                                            <input type="password" name="password2" minlength="8" className="textinput textInput" required id="id_password2"/>
+                                                            <input type="password" name="confirmpassword" className="textinput textInput" id="id_password2" onChange={handleChange}/>
                                                         </div>
                                                         <div className="login_footer form-group mb-50">
                                                             <div className="chek-form">
@@ -68,6 +106,7 @@ const Register = () => {
                                                             <button type="submit" className="btn btn-fill-out btn-block hover-up font-weight-bold" name="login">Submit &amp; Register</button>
                                                         </div>
                                                         <p className="font-xs text-muted"><strong>Note:</strong>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy</p>
+                                                        <ToastContainer/>
                                                 </form>
                                             </div>
                                         </div>

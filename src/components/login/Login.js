@@ -9,7 +9,7 @@ const Login = () => {
         email: "",
         password: ""
     });
-    console.log(data);
+    // console.log(data);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
