@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import Header from '../header/Header';
+import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import Footer from '../footer/Footer';
+// import { getUserAsync } from '../features/login/loginSlice';
+import { getUserAsync } from '../../store/slices/LoginSlice';
 
 const Login = () => {
+
+    const dispatch = useDispatch();
+    // const navigate= useNavigate();
 
     const [data, setData] = useState({
         email: "",
@@ -39,6 +45,7 @@ const Login = () => {
             // }else{
             //   toast.error(response.response.data.error);
             // }
+            dispatch(getUserAsync(data));
             toast.success("login Done");
         }
     }
