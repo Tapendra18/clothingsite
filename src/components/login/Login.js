@@ -84,14 +84,12 @@ const Login = () => {
                                                             Username or Email<span className="asteriskField">*</span>
                                                         </label>
                                                         <input type="text" name="email" className="textinput textInput" id="id_username" onChange={handleChange} />
-                                                        <ToastContainer />
 
                                                     </div>
                                                     <div id="div_id_password" className="ctrlHolder">
                                                         <label htmlFor="id_password" className="requiredField">
                                                             Password<span className="asteriskField">*</span>
                                                         </label>
-                                                        <ToastContainer />
                                                         <input type="password" name="password" className="textinput textInput" id="id_password" onChange={handleChange} />
                                                     </div>
                                                     <div className="login_footer form-group mb-50">
@@ -106,6 +104,7 @@ const Login = () => {
                                                     <div className="form-group">
                                                         <button className="btn btn-heading btn-block hover-up" name="login">Log in</button>
                                                     </div>
+                                                    <ToastContainer />
                                                 </form>
                                             </div>
                                         </div>
