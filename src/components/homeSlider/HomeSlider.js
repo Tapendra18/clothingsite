@@ -26,53 +26,53 @@ function HomeSlider() {
                                 <ul>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/food-beverage"> <img
-                                            src="media/categories/super/imgs/category-2_1.png " alt="" />Food &amp;
-                                            Beverage</a>
+                                            src="media/categories/super/imgs/category-2_1.png " alt="" />Mens
+                                            Wear's</a>
                                     </li>
 
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/beauty-fragrances"> <img
-                                            src="static/assets/imgs/theme/icons/category-1.svg " alt="" />Beauty
-                                            &amp; Fragrances</a>
+                                            src="static/assets/imgs/theme/icons/category-1.svg " alt="" />Women's wear's
+                                             </a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/automotive"> <img
                                             src="media/categories/super/imgs/category-4.png "
-                                            alt="" />Automotive</a>
+                                            alt="" />Kids</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/consumer-electronics"> <img
                                             src="media/categories/super/imgs/category-4_brSMGKb.png "
-                                            alt="" />Consumer Electronics</a>
+                                            alt="" />Shirt</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/health-personal-care"> <img
                                             src="static/assets/imgs/theme/icons/category-1.svg " alt="" />Health
-                                            &amp; Personal Care</a>
+                                            &amp; Kurti's</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/fashion-accessories"> <img
-                                            src="media/categories/super/imgs/category-3.png " alt="" />Fashion &amp;
-                                            Accessories</a>
+                                            src="media/categories/super/imgs/category-3.png " alt="" />Kid's 
+                                            T-shirt</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/office-stationery"> <img
-                                            src="static/assets/imgs/theme/icons/category-1.svg " alt="" />Office
-                                            &amp; Stationery</a>
+                                            src="static/assets/imgs/theme/icons/category-1.svg " alt="" />Women
+                                            Suit's</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/construction-hardware"> <img
-                                            src="media/categories/super/imgs/icon-4.png " alt="" />Construction
-                                            &amp; Hardware</a>
+                                            src="media/categories/super/imgs/icon-4.png " alt="" />Men's
+                                             Hoodies</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/home-furniture"> <img
-                                            src="media/categories/super/imgs/category-10.png " alt="" />Home &amp;
-                                            Furniture</a>
+                                            src="media/categories/super/imgs/category-10.png " alt="" />Men's  
+                                            Jean's</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/toys"> <img src="media/categories/super/imgs/icon-2.png "
-                                            alt="" />Toys</a>
+                                            alt="" />Women's Top's</a>
                                     </li>
                                 </ul>
                             </div>
@@ -82,7 +82,7 @@ function HomeSlider() {
                                         <li style={{ paddingTop: '30px' }}>
                                             <a href="/shop/super/automotive"> <img
                                                 src="media/categories/super/imgs/category-4.png "
-                                                alt="" />Automotive</a>
+                                                alt="" />Kid's Pant's</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -101,19 +101,12 @@ function HomeSlider() {
                                             style={{ backgroundImage: `url(media/carousel/slider-1.png)`, position: 'relative', }}>
                                             <div className="slider-content">
                                                 <a href="product-details.html" style={{ zIndex: "98988" ,}}>
-                                                    <h1 className="display-2 mb-40">
-                                                        Don’t miss amazing <br />
-                                                        grocery deals
+                                                    <h1 className="display-2 mb-40" style={{color:"white"}}>
+                                                        Men's  <br />
+                                                        Women's wear's
                                                     </h1>
                                                 </a>
-                                                <p className="mb-65">Sign up for the daily newsletter</p>
-                                                <form method="POST" className="form-subcriber d-flex selector-1">
-                                                    <input type="hidden" name="csrfmiddlewaretoken"
-                                                        value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
-                                                    <input id="subscribe-input-1" className="form-none" type="email"
-                                                        placeholder="Your emaill address" required />
-                                                    <button className="btn form-none" type="submit">Subscribe</button>
-                                                </form>
+                                                <p className="mb-65">Buy Now </p>
                                             </div>
                                         </div>
                                     </div>
@@ -126,14 +119,7 @@ function HomeSlider() {
                                                         Up To 700 Shooping <br />Big discount
                                                     </h1>
                                                 </a>
-                                                <p className="mb-65" >Sign up for the daily newsletter</p>
-                                                <form className="form-subcriber d-flex selector-1">
-                                                    <input type="hidden" name="csrfmiddlewaretoken"
-                                                        value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
-                                                    <input id="subscribe-input-1" className="form-none" type="email"
-                                                        placeholder="Your emaill address" required />
-                                                    <button className="btn form-none" type="submit">Subscribe</button>
-                                                </form>
+                                                <p className="mb-65" >Sign up for the daily newsletter</p>                                       
                                             </div>
                                         </div>
                                     </div>
@@ -149,8 +135,8 @@ function HomeSlider() {
                                     <img src="media/ads/sidebar/banner-14_NHnALKO.png" alt="" />
                                     <div className="banner-text">
                                         <h4 className="mb-30">
-                                            Everyday Fresh &amp; <br />
-                                            Clean with Our Products
+                                             Wear &amp; <br />
+                                            With Offer's
                                         </h4>
                                         <a href="product-details.html" className="btn btn-xs mb-50">Shop Now <i
                                             className="fi-rs-arrow-small-right"></i></a>
@@ -162,8 +148,8 @@ function HomeSlider() {
                                     <img src="media/ads/sidebar/banner-15_wiwgjI6.png" alt="" />
                                     <div className="banner-text">
                                         <h5 className="mb-20">
-                                            The best Organic <br />
-                                            Products Online
+                                            Products  <br />
+                                            On Sale
                                         </h5>
                                         <a href="product-details.html" className="btn btn-xs">Shop Now <i
                                             className="fi-rs-arrow-small-right"></i></a>

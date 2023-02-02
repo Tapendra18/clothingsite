@@ -11,11 +11,26 @@ const Login = () => {
     const dispatch = useDispatch();
     // const navigate= useNavigate();
 
+    // const { error, userData } = useSelector(
+    //     (state) => state.users
+    // );
+
+    // useEffect(()=>{
+
+    //     if(userData){
+    //         console.log(userData, 'loginDone');
+    //         localStorage.setItem('loginUser', JSON.stringify(userData));
+    //         localStorage.setItem('token', userData.token);
+    //         // navigate("/dashboard");
+    //     }
+    // },[userData])
+    // console.log(error, 'errrorororo');
+
     const [data, setData] = useState({
         email: "",
         password: ""
     });
-    // console.log(data);
+    console.log(data);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,13 +44,13 @@ const Login = () => {
         if (email === "") {
             toast.error("Enter Your Name");
         } else if (email === "") {
-            toast.error("Enter Your Email")
+            toast.error("Enter Your Email");
         } else if (!email.includes("@")) {
-            toast.error("Enter Valid Email")
+            toast.error("Enter Valid Email");
         } else if (password === "") {
-            toast.error("Enter Your Password")
+            toast.error("Enter Your Password");
         } else if (password.length < 6) {
-            toast.error("password length minimum 6 character")
+            toast.error("password length minimum 6 character");
         } else {
             // const response = await registerfunction(inputdata);
 

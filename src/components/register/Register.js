@@ -6,12 +6,12 @@ import { toast , ToastContainer} from 'react-toastify';
 const Register = () => {
 
     const [data , setData] = useState({
-        username:"",
+        fname:"",
         email:"",
         password:"",
         confirmpassword:""
     });
-    // console.log(data);
+    console.log(data);
 
     const handleChange = (e)=>{
         const {name , value} = e.target;
@@ -20,13 +20,13 @@ const Register = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        const {username, email , password, confirmpassword}= data;
+        const {fname, email , password, confirmpassword}= data;
 
         if(email=== ""){
             toast.error("Enter Your Name");
         }else if(!email.includes("@")){
             toast.error("Enter Valid Email");
-        }else if (username === ""){
+        }else if (fname === ""){
             toast.error("Enter Your Username");
         }else if(password === ""){
             toast.error("Enter Your Password");
@@ -71,7 +71,7 @@ const Register = () => {
                                                             <label for="id_username" className="requiredField">
                                                                 Username<span className="asteriskField">*</span>
                                                             </label>
-                                                            <input type="text" name="username" className="form-control textinput textInput" id="id_username" onChange={handleChange}/>
+                                                            <input type="text" name="fname" className="form-control textinput textInput" id="id_username" onChange={handleChange}/>
                                                                 <div id="hint_id_username" className="formHint">usernames can't contain spaces or @/./+/-/_ characters .</div>
                                                         </div>
                                                         <div id="div_id_email" className="ctrlHolder">
