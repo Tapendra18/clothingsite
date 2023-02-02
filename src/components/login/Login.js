@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Header from '../header/Header';
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import Footer from '../footer/Footer';
 // import { getUserAsync } from '../features/login/loginSlice';
-import { getUserAsync } from '../../store/slices/LoginSlice';
+// import { getUserAsync } from '../../store/slices/LoginSlice';
 
 const Login = () => {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     // const navigate= useNavigate();
 
     // const { error, userData } = useSelector(
@@ -52,15 +52,7 @@ const Login = () => {
         } else if (password.length < 6) {
             toast.error("password length minimum 6 character");
         } else {
-            // const response = await registerfunction(inputdata);
-
-            // if(response.status === 200){
-            //   setInputdata({...inputdata,fname:"",email:"",password:""});
-            //   navigate("/")
-            // }else{
-            //   toast.error(response.response.data.error);
-            // }
-            dispatch(getUserAsync(data));
+            // dispatch(getUserAsync(data));
             toast.success("login Done");
         }
     }

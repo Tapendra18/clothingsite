@@ -10,7 +10,7 @@ function Banner() {
                             <img src="media/ads/middlebar/banner-3.png" alt="" />
                             <div className="banner-text">
                                 <h4>
-                                    The best Organic <br />Products Online
+                                    The best Offers Are Here
                                 </h4>
                                 <a href="product-details.html" className="btn btn-xs">Shop Now <i
                                     className="fi-rs-arrow-small-right"></i></a>
@@ -22,7 +22,7 @@ function Banner() {
                             <img src="media/ads/middlebar/banner-1.png" alt="" />
                             <div className="banner-text">
                                 <h4>
-                                    Everyday Fresh &amp; <br />Clean with Our Products
+                                    New Cloth for all 
                                 </h4>
                                 <a href="product-details.html" className="btn btn-xs">Shop Now <i
                                     className="fi-rs-arrow-small-right"></i></a>
@@ -34,7 +34,7 @@ function Banner() {
                             <img src="media/ads/middlebar/banner-2.png" alt="" />
                             <div className="banner-text">
                                 <h4>
-                                    Make your Breakfa <br />st Healthy and Easy
+                                    Make your day <br /> stylist
                                 </h4>
                                 <a href="product-details.html" className="btn btn-xs">Shop Now <i
                                     className="fi-rs-arrow-small-right"></i></a>
