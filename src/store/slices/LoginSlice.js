@@ -1,7 +1,10 @@
 import { createSlice} from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = "/api/v1/user/login";
+const API_URL = "http://localhost:8000/user/login";
+// let token = window.localStorage.setItem("loginUser", JSON.stringify(res.data));
+
+
 
 const initialState = {
     userData:[],
@@ -23,16 +26,29 @@ const user = createSlice({
     }
 });
 
+// const token = "your_token"
 
+// const headers = {
+//     'Content-Type': 'application/json',
+//     'Authorization':`Bearer ${token}`,
+//   }
 
-export const getUserAsync = (data)=> async(dispatch)=>{
+export const getUserAsync = (data )=> async(dispatch)=>{
     try{
-        const response = await axios.post(API_URL,data);
-        console.log(response , 'ddddddd');
+        const response = await axios.post(API_URL,data );
+        // window.localStorage.setItem("loginUser", JSON.stringify(res.data));
+        const token = response.data.token;
+        // Store the token in local storage or a cookie
+        localStorage.setItem("token", token);
+        // Set the token in the Axios default header for all future requests
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         dispatch(getuser(response.data));
+        console.log(response , 'ddddddd');
+        // console.log(res.data , "ressspponnnnn");
     }catch(err) {
+        dispatch(getUserLoginError(err.response ? err.response.data : err.message));
         console.log(err , 'errror');
-        dispatch(getUserLoginError(err.response ? err.response.data : err.message))
+
     }
 }
 

@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import { useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import { registerfunction } from '../../services/Apis';
-
+import { getRegister } from '../../store/slices/RegisterSlice';
 
 const Register = () => {
+    const dispatch = useDispatch();
 
     const [data, setData] = useState({
         fname: "",
@@ -38,11 +40,14 @@ const Register = () => {
             toast.error("Enter Confirm Password");
         } else if (cpassword.length < 6) {
             toast.error("Confirm password length minimum 6 character");
-        } else {
-
-            const response = await registerfunction(data);
-            console.log(response ,'resssssss');
-            // toast.success("Register Success");
+        }else if (password!==cpassword){
+            toast.error("Password are not match");
+        }
+         else {
+            dispatch(getRegister(data));
+            // const response = await registerfunction(data);
+            // console.log(response ,'resssssss');
+            toast.success("Register Success");
         }
     }
 
