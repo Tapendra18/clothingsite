@@ -31,7 +31,7 @@ export const getRegister = (data) => async(dispatch)=>{
     try{
         const response = await axios.post(API_URL, data ,headers);
         const token = response.data.token;
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", token );
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
         console.log(response , "ddddd");
         dispatch(registerUser(response.data));

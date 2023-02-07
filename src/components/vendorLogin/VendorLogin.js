@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { vendorLoginAPI } from '../../store/slices/vendorloginSlice';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 const VendorLogin = () => {
 
     const dispatch = useDispatch();
@@ -36,13 +38,9 @@ const VendorLogin = () => {
 
     return (
         <>
+        <Header/>
             <main>
                 <header className="main-header style-2 navbar">
-                    <div className="col-brand">
-                        <a href="/" className="brand-wrap">
-                            <img src="media/site_logo/imgs/logo_VKBBW51_1.png" className="logo" alt="Nest Dashboard" />
-                        </a>
-                    </div>
                     <div className="col-nav">
                         <ul className="nav">
 
@@ -101,6 +99,7 @@ const VendorLogin = () => {
 
                 </footer>
             </main>
+            <Footer/>
         </>
     )
 }

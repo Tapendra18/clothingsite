@@ -38,6 +38,7 @@ export const getUserAsync = (data )=> async(dispatch)=>{
         const token = response.data.token;
         // Store the token in local storage or a cookie
         localStorage.setItem("token", token);
+        localStorage.setItem("formValues", JSON.stringify(data));
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         dispatch(getuser(response.data));
         console.log(response , 'ddddddd');
