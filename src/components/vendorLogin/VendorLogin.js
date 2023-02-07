@@ -1,6 +1,38 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { vendorLoginAPI } from '../../store/slices/vendorloginSlice';
 const VendorLogin = () => {
+
+    const dispatch = useDispatch();
+    const [data , setData ] = useState({
+        email:"",
+        password:""
+    });
+
+    const handleChange = (e) =>{
+        const {name , value} = e.target;
+        setData({...data , [name]:value});
+    }
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        const {email , password} = data;
+
+        if(email === ""){
+            toast.error("Enter the username");
+        } else if(password === ""){
+            toast.error("Enter the password");
+        }else if(!email.includes("@")){
+            toast.error("Enter valid Email");
+        }else if(password.length < 6){
+            toast.error("password length min 6 character");
+        }else{
+            dispatch(vendorLoginAPI(data));
+            toast.success("login done");
+        }
+    }
+
 
     return (
         <>
@@ -32,14 +64,14 @@ const VendorLogin = () => {
                     <div className="card mx-auto card-login">
                         <div className="card-body">
                             <h4 className="card-title mb-4">Sign in</h4>
-                            <form method="post">
+                            <form onSubmit={handleSubmit}>
                                 <input type="hidden" name="csrfmiddlewaretoken" value="E4h7lHACclI1BpqM45vIr7HmUdaG2vWXQxZXlpaWtqbSJuZe1aWEquvALfmbfAnd"/>
                                     <div className="mb-3">
-                                        <input className="form-control" name="username" value='selem' placeholder="Username or email" type="text" />
+                                        <input className="form-control" name="email" placeholder="Username or email" type="text" onChange={handleChange}/>
                                     </div>
 
                                     <div className="mb-3">
-                                        <input className="form-control" name="password" value='Test123456!@#' placeholder="Password" type="password" />
+                                        <input className="form-control" name="password" placeholder="Password" type="password" onChange={handleChange} />
                                     </div>
 
                                     <div className="mb-3">
