@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 const VendorLogin = () => {
+
     return (
         <>
             <main>
                 <header className="main-header style-2 navbar">
                     <div className="col-brand">
                         <a href="/" className="brand-wrap">
-                            <img src="/media/site_logo/imgs/logo_VKBBW51_1.png" className="logo" alt="Nest Dashboard" />
+                            <img src="media/site_logo/imgs/logo_VKBBW51_1.png" className="logo" alt="Nest Dashboard" />
                         </a>
                     </div>
                     <div className="col-nav">
@@ -54,7 +55,7 @@ const VendorLogin = () => {
                                     </div>
 
                             </form>
-                            <p className="text-center mb-4">Don't have account? <a href="/supplier-register/">Sign up</a></p>
+                            <p className="text-center mb-4">Don't have account? <a href="/supplier-register">Sign up</a></p>
                         </div>
                     </div>
                 </section>

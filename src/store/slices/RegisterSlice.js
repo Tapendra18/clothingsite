@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = "http://localhost:8000/user/login";
+const API_URL = "http://localhost:8000/api/v1/register";
 
 const initialState = {
     userData:[],
@@ -30,6 +30,9 @@ const headers = {
 export const getRegister = (data) => async(dispatch)=>{
     try{
         const response = await axios.post(API_URL, data ,headers);
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
         console.log(response , "ddddd");
         dispatch(registerUser(response.data));
     }catch(err) {

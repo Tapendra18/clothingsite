@@ -3,7 +3,7 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { useDispatch } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
-import { registerfunction } from '../../services/Apis';
+// import { registerfunction } from '../../services/Apis';
 import { getRegister } from '../../store/slices/RegisterSlice';
 
 const Register = () => {
