@@ -1,30 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./PopularCategory.css";
 import Slider from "react-slick";
+import axios from "axios";
 
 function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className }
-        style={{ ...style, display: "block",  top: -50,
-        right: 0  ,width:'40px' ,height : '40px' , fontSize:'30px' }}
-        onClick={onClick}
-      />
-    );
-  }
-  
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{  display: "block" ,  top: -50,
-        right: 10  , width:'40px' ,height : '40px' , }}
-        onClick={onClick}
-      />
-    );
-  }
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style, display: "block", top: -50,
+        right: 0, width: '40px', height: '40px', fontSize: '30px'
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        display: "block", top: -50,
+        right: 10, width: '40px', height: '40px',
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
 
 function PopularCategory() {
@@ -38,6 +43,20 @@ function PopularCategory() {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
+
+  const [data, setData] = useState();
+  const API_URL = "http://127.0.0.1:8000/"
+  console.log(data);
+
+  const getusers = () => {
+    axios.get("http://127.0.0.1:8000/api/v1/category")
+      .then(response => setData(response))
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    getusers();
+  }, []);
   return (
     <section className="popular-categories section-padding">
       <div className="container wow animate__animated animate__fadeIn">
@@ -74,31 +93,34 @@ function PopularCategory() {
           </div>
 
           <Slider {...settings}>
-            <div
-              className="card-2 bg-1 wow animate__animated animate__fadeInUp"
-              data-wow-delay=".1s"
-              style={{
-                width: "137px",
-                visibility: "visible",
-                animationDelay: "0.1s",
-                animationName: "fadeInUp",
-              }}
-            >
-              <figure className="img-hover-scale overflow-hidden">
-                <a href="/shop/main/household-supplies">
-                  <img
-                    src="media/categories/main/imgs/3e50c6fd349f94d6fd41961681e84725.webp"
-                    width="80"
-                    height="80"
-                    alt="Household Supplies"
-                  />
-                </a>
-              </figure>
-              <h6>
-                <a href="/shop/main/household-supplies">Household Supplies</a>
-              </h6>
-            </div>
-            <div
+            {data && data.data.data.map((datas) => (
+              <div
+                className="card-2 bg-1 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".1s"
+                style={{
+                  width: "137px",
+                  visibility: "visible",
+                  animationDelay: "0.1s",
+                  animationName: "fadeInUp",
+                }}
+              >
+                <figure className="img-hover-scale overflow-hidden">
+                  <a href="/shop/main/household-supplies">
+                    <img
+                      src={`${API_URL + datas.image}`}
+                      width="80"
+                      height="80"
+                      alt="Household Supplies"
+                    />
+                  </a>
+                </figure>
+                <h6>
+                  <a href="/shop/main/household-supplies">{datas.title}</a>
+                </h6>
+              </div>
+            ))}
+
+            {/* <div
               className="card-2 bg-2 wow animate__animated animate__fadeInUp slick-slide slick-cloned"
               data-wow-delay=".2s"
               style={{
@@ -533,7 +555,7 @@ function PopularCategory() {
               <h6>
                 <a href="/shop/main/fitness-training">Fitness &amp; Training</a>
               </h6>
-            </div>
+            </div> */}
           </Slider>
         </div>
       </div>

@@ -25,15 +25,15 @@ function HomeSlider() {
                             <div className="d-flex categori-dropdown-inner">
                                 <ul>
                                     <li style={{ paddingTop: '30px' }}>
-                                        <a href="/shop/super/food-beverage"> <img
-                                            src="media/categories/super/imgs/category-2_1.png " alt="" />Mens
+                                        <a href="/shop/super/food-beverage">
+                                            <img src="media/categories/super/imgs/category-2_1.png " alt="" />Mens
                                             Wear's</a>
                                     </li>
 
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/beauty-fragrances"> <img
                                             src="static/assets/imgs/theme/icons/category-1.svg " alt="" />Women's wear's
-                                             </a>
+                                        </a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/automotive"> <img
@@ -52,7 +52,7 @@ function HomeSlider() {
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/fashion-accessories"> <img
-                                            src="media/categories/super/imgs/category-3.png " alt="" />Kid's 
+                                            src="media/categories/super/imgs/category-3.png " alt="" />Kid's
                                             T-shirt</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
@@ -63,11 +63,11 @@ function HomeSlider() {
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/construction-hardware"> <img
                                             src="media/categories/super/imgs/icon-4.png " alt="" />Men's
-                                             Hoodies</a>
+                                            Hoodies</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
                                         <a href="/shop/super/home-furniture"> <img
-                                            src="media/categories/super/imgs/category-10.png " alt="" />Men's  
+                                            src="media/categories/super/imgs/category-10.png " alt="" />Men's
                                             Jean's</a>
                                     </li>
                                     <li style={{ paddingTop: '30px' }}>
@@ -98,10 +98,10 @@ function HomeSlider() {
                                 <Slider {...settings}>
                                     <div>
                                         <div className="single-hero-slider single-animation-wrap"
-                                            style={{ backgroundImage: `url(media/carousel/slider-1.png)`, position: 'relative', }}>
+                                            style={{ backgroundImage: `url(media/carousel/slider-1.png)`, position: 'relative' }}>
                                             <div className="slider-content">
-                                                <a href="product-details.html" style={{ zIndex: "98988" ,}}>
-                                                    <h1 className="display-2 mb-40" style={{color:"white"}}>
+                                                <a href="product-details.html" style={{ zIndex: "98988", }}>
+                                                    <h1 className="display-2 mb-40" style={{ color: "white" }}>
                                                         Men's  <br />
                                                         Women's wear's
                                                     </h1>
@@ -112,14 +112,14 @@ function HomeSlider() {
                                     </div>
                                     <div>
                                         <div className="single-hero-slider single-animation-wrap"
-                                            style={{ backgroundImage: `url(media/carousel/slider-2.png)`, position: 'relative'}}>
+                                            style={{ backgroundImage: `url(media/carousel/slider-2.png)`, position: 'relative' }}>
                                             <div className="slider-content">
                                                 <a href="product-details.html">
                                                     <h1 className="display-2 mb-40" >
                                                         Up To 700 Shooping <br />Big discount
                                                     </h1>
                                                 </a>
-                                                <p className="mb-65" >Sign up for the daily newsletter</p>                                       
+                                                <p className="mb-65" >Sign up for the daily newsletter</p>
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@ function HomeSlider() {
                                     <img src="media/ads/sidebar/banner-14_NHnALKO.png" alt="" />
                                     <div className="banner-text">
                                         <h4 className="mb-30">
-                                             Wear &amp; <br />
+                                            Wear &amp; <br />
                                             With Offer's
                                         </h4>
                                         <a href="product-details.html" className="btn btn-xs mb-50">Shop Now <i
