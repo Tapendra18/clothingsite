@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function DayDeal() {
-    return(
+
+    const [data, setData] = useState();
+    console.log(data, "daydeal");
+    const API_URL = "http://127.0.0.1:8000/"
+    console.log(data);
+
+    const getusers = () => {
+        axios.get("http://127.0.0.1:8000/api/v1/daydeal")
+            .then(response => setData(response))
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getusers();
+    }, []);
+    return (
         <>
             <section className="section-padding pb-5">
                 <div className="container">
@@ -12,150 +28,48 @@ function DayDeal() {
                             <i className="fi-rs-angle-right"></i>
                         </a>
                     </div>
-                    <div className="row">
-                        <div className=" col-xl-3 col-lg-4 col-md-6  ">
-                            <div className="product-cart-wrap style-2 wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".1s">
-                                <div className="product-img-action-wrap">
-                                    <div className="product-img">
-                                        <a href="product-details.html">
-                                            <img src="media/ads/deal-time/banner-8.png" alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product-content-wrap">
-                                    <div className="deals-countdown-wrap">
-                                        <div className="deals-countdown" data-countdown="2022/08/31 00:45:04"></div>
-                                    </div>
-                                    <div className="deals-content">
-                                        <h2><a href="product-details.html">Simply Lemonade with Raspberry Juice</a></h2>
-
-                                        <div>
-                                            <span className="font-small text-muted">By <a
-                                                href=" /vendor-details/selem">selem</a></span>
+                    
+                        <div className="row">
+                        {data && data.data.data.map((item) => (
+                            <div className=" col-xl-3 col-lg-4 col-md-6">
+                                <div className="product-cart-wrap style-2 wow animate__animated animate__fadeInUp"
+                                    data-wow-delay=".1s">
+                                    <div className="product-img-action-wrap">
+                                        <div className="product-img">
+                                            <a href="product-details.html">
+                                                <img src={`${API_URL + item.image}`} alt="" />
+                                            </a>
                                         </div>
-                                        <div className="product-card-bottom">
-                                            <div className="product-price">
-                                                <span>USD17.0</span>
-                                                <span className="old-price">USD19.0</span>
+                                    </div>
+                                    <div className="product-content-wrap">
+                                        <div className="deals-countdown-wrap">
+                                            <div className="deals-countdown" data-countdown="2022/08/31 00:45:04"></div>
+                                        </div>
+                                        <div className="deals-content">
+                                            <h2><a href="product-details.html">{item.title}</a></h2>
+
+                                            <div>
+                                                <span className="font-small text-muted">By <a
+                                                    href=" /vendor-details/selem">{item.company}</a></span>
                                             </div>
-                                            <div className="add-cart">
-                                                <a className="add" href="product-details.html"><i
-                                                    className="fi-rs-shopping-cart mr-5"></i>View</a>
+                                            <div className="product-card-bottom">
+                                                <div className="product-price">
+                                                    <span>{item.price}</span>
+                                                    <span className="old-price">{item.discount}</span>
+                                                </div>
+                                                <div className="add-cart">
+                                                    <a className="add" href="product-details.html"><i
+                                                        className="fi-rs-shopping-cart mr-5"></i>View</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className=" col-xl-3 col-lg-4 col-md-6  ">
-                            <div className="product-cart-wrap style-2 wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".2s">
-                                <div className="product-img-action-wrap">
-                                    <div className="product-img">
-                                        <a href="product-details.html">
-                                            <img src="media/ads/deal-time/banner-5.png" alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product-content-wrap">
-                                    <div className="deals-countdown-wrap">
-                                        <div className="deals-countdown" data-countdown="2022/08/31 00:46:22"></div>
-                                    </div>
-                                    <div className="deals-content">
-                                        <h2><a href="product-details.html">Seeds of Change Organic Quinoa, Brown, &amp; Red
-                                            Rice</a></h2>
+                       
+                    ))}
+                     </div>
 
-                                        <div>
-                                            <span className="font-small text-muted">By <a
-                                                href=" /vendor-details/selem">selem</a></span>
-                                        </div>
-                                        <div className="product-card-bottom">
-                                            <div className="product-price">
-                                                <span>USD11.0</span>
-                                                <span className="old-price">USD19.0</span>
-                                            </div>
-                                            <div className="add-cart">
-                                                <a className="add" href="product-details.html"><i
-                                                    className="fi-rs-shopping-cart mr-5"></i>View</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" col-xl-3 col-lg-4 col-md-6 d-none d-lg-block ">
-                            <div className="product-cart-wrap style-2 wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".3s">
-                                <div className="product-img-action-wrap">
-                                    <div className="product-img">
-                                        <a href="product-details.html">
-                                            <img src="media/ads/deal-time/banner-7.png" alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product-content-wrap">
-                                    <div className="deals-countdown-wrap">
-                                        <div className="deals-countdown" data-countdown="2022/08/31 00:45:36"></div>
-                                    </div>
-                                    <div className="deals-content">
-                                        <h2><a href="product-details.html">Signature Wood-Fired Mushroom and Caramelized</a>
-                                        </h2>
-
-                                        <div>
-                                            <span className="font-small text-muted">By <a
-                                                href=" /vendor-details/selem">selem</a></span>
-                                        </div>
-                                        <div className="product-card-bottom">
-                                            <div className="product-price">
-                                                <span>USD15.0</span>
-                                                <span className="old-price">USD19.0</span>
-                                            </div>
-                                            <div className="add-cart">
-                                                <a className="add" href="product-details.html"><i
-                                                    className="fi-rs-shopping-cart mr-5"></i>View</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" col-xl-3 col-lg-4 col-md-6 d-none d-xl-block  ">
-                            <div className="product-cart-wrap style-2 wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".4s">
-                                <div className="product-img-action-wrap">
-                                    <div className="product-img">
-                                        <a href="product-details.html">
-                                            <img src="media/ads/deal-time/banner-6.png" alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product-content-wrap">
-                                    <div className="deals-countdown-wrap">
-                                        <div className="deals-countdown" data-countdown="2022/08/31 00:45:59"></div>
-                                    </div>
-                                    <div className="deals-content">
-                                        <h2><a href="product-details.html">Perdue Simply Smart Organics Gluten Free</a></h2>
-
-                                        <div>
-                                            <span className="font-small text-muted">By <a
-                                                href=" /vendor-details/selem">selem</a></span>
-                                        </div>
-                                        <div className="product-card-bottom">
-                                            <div className="product-price">
-                                                <span>USD11.0</span>
-                                                <span className="old-price">USD15.0</span>
-                                            </div>
-                                            <div className="add-cart">
-                                                <a className="add" href="product-details.html"><i
-                                                    className="fi-rs-shopping-cart mr-5"></i>View</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -177,7 +91,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '40%'}}></div>
+                                                <div className="product-rating" style={{ width: '40%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (1)</span>
                                         </div>
@@ -199,7 +113,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '80%'}}></div>
+                                                <div className="product-rating" style={{ width: '80%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (1)</span>
                                         </div>
@@ -220,7 +134,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '0%'}}></div>
+                                                <div className="product-rating" style={{ width: '0%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (0)</span>
                                         </div>
@@ -248,7 +162,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '60%'}}></div>
+                                                <div className="product-rating" style={{ width: '60%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (1)</span>
                                         </div>
@@ -271,7 +185,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '50%'}}></div>
+                                                <div className="product-rating" style={{ width: '50%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (2)</span>
                                         </div>
@@ -292,7 +206,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '40%'}}></div>
+                                                <div className="product-rating" style={{ width: '40%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (1)</span>
                                         </div>
@@ -318,7 +232,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '40%'}}></div>
+                                                <div className="product-rating" style={{ width: '40%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (1)</span>
                                         </div>
@@ -340,7 +254,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '50%'}}></div>
+                                                <div className="product-rating" style={{ width: '50%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (2)</span>
                                         </div>
@@ -363,7 +277,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '0%'}}></div>
+                                                <div className="product-rating" style={{ width: '0%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (0)</span>
                                         </div>
@@ -390,7 +304,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '40%'}}></div>
+                                                <div className="product-rating" style={{ width: '40%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (1)</span>
                                         </div>
@@ -412,7 +326,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '50%'}}></div>
+                                                <div className="product-rating" style={{ width: '50%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (2)</span>
                                         </div>
@@ -433,7 +347,7 @@ function DayDeal() {
                                         </h6>
                                         <div className="product-rate-cover">
                                             <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{width: '0%'}}></div>
+                                                <div className="product-rating" style={{ width: '0%' }}></div>
                                             </div>
                                             <span className="font-small ml-5 text-muted"> (0)</span>
                                         </div>
