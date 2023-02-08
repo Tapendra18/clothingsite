@@ -57,6 +57,8 @@ function PopularCategory() {
   useEffect(() => {
     getusers();
   }, []);
+
+  
   return (
     <section className="popular-categories section-padding">
       <div className="container wow animate__animated animate__fadeIn">
