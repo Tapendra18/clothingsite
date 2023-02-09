@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import './products.css';
 import axios from "axios";
+import { additem } from "../../store/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
-function Products() {
+function Products(props) {
 
     const [data, setData] = useState();
     const API_URL = "http://127.0.0.1:8000/"
@@ -16,6 +18,20 @@ function Products() {
     useEffect(() => {
         getusers();
     }, []);
+
+    const [added, isAdded] = useState(false);
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        const item = { ...props }
+        dispatch(additem(item));
+
+        isAdded(true);
+
+        setTimeout(() => {
+            isAdded(false);
+        }, 3000);
+    }
 
     return (
         <section className="product-tabs section-padding position-relative">
@@ -68,9 +84,11 @@ function Products() {
                                                     <span className="old-price">USD16.0</span>
                                                 </div>
                                                 <div className="add-cart">
-                                                    <a className="add"
-                                                        href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn"><i
-                                                            className="fi-rs-eye mr-5"></i>View </a>
+                                                    <button className="add"
+                                                        onClick={handleAddToCart}
+                                                        type="button"
+                                                        href="/cart"><i
+                                                        className="fi-rs-eye mr-5"></i>{added ? 'View ' : 'Add to cart'} </button>
                                                 </div>
                                             </div>
                                         </div>
