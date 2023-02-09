@@ -18,6 +18,7 @@ function HomeSlider() {
     };
 
     const [data, setData] = useState();
+    console.log(data);
     const API_URL = "http://127.0.0.1:8000/";
 
     const getusers = () => {
@@ -111,17 +112,16 @@ function HomeSlider() {
                             <div className="hero-slider-1 style-5 dot-style-1 dot-style-1-position-2">
                                 <Slider {...settings}>
                                     {data && data.data.data.map((item) => (
-                                        <div>
-                                            <div className="single-hero-slider single-animation-wrap"
-                                                style={{ backgroundImage:`${API_URL + item.image}`, position: 'relative' }}>
-                                                <div className="slider-content">
-                                                    <a href="product-details.html" style={{ zIndex: "98988"}}>
-                                                        <h1 className="display-2 mb-40" style={{ color: "white" }}>
-                                                           {item.title}
-                                                        </h1>
-                                                    </a>
-                                                    <p className="mb-65">Buy Now </p>
-                                                </div>
+                                        <div className="single-hero-slider single-animation-wrap"
+                                            style={{ position: 'relative' }}>
+                                            <img src={`${API_URL + item.image}`} />
+                                            <div className="slider-content">
+                                                <a href="product-details.html" style={{ zIndex: "98988" }}>
+                                                    <h1 className="display-2 mb-40" style={{ color: "white" }}>
+                                                        {item.title}
+                                                    </h1>
+                                                </a>
+                                                {/* <p className="mb-65">Buy Now </p> */}
                                             </div>
                                         </div>
                                     ))}
