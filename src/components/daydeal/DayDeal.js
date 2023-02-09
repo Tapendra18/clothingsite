@@ -5,8 +5,7 @@ function DayDeal() {
 
     const [data, setData] = useState();
     console.log(data, "daydeal");
-    const API_URL = "http://127.0.0.1:8000/"
-    console.log(data);
+    const API_URL = "http://127.0.0.1:8000/";
 
     const getusers = () => {
         axios.get("http://127.0.0.1:8000/api/v1/daydeal")

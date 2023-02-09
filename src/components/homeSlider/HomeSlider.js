@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import './homeSlider.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,6 +16,20 @@ function HomeSlider() {
         autoplay: true,
         autoplaySpeed: 4000,
     };
+
+    const [data, setData] = useState();
+    console.log(data, "bannerr");
+    const API_URL = "http://127.0.0.1:8000/";
+
+    const getusers = () => {
+        axios.get("http://127.0.0.1:8000/api/v1/banner")
+            .then(response => setData(response))
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getusers();
+    }, []);
 
     return (
         <section className="home-slider position-relative mb-30">
@@ -96,33 +111,21 @@ function HomeSlider() {
 
                             <div className="hero-slider-1 style-5 dot-style-1 dot-style-1-position-2">
                                 <Slider {...settings}>
-                                    <div>
-                                        <div className="single-hero-slider single-animation-wrap"
-                                            style={{ backgroundImage: `url(media/carousel/slider-1.png)`, position: 'relative' }}>
-                                            <div className="slider-content">
-                                                <a href="product-details.html" style={{ zIndex: "98988", }}>
-                                                    <h1 className="display-2 mb-40" style={{ color: "white" }}>
-                                                        Men's  <br />
-                                                        Women's wear's
-                                                    </h1>
-                                                </a>
-                                                <p className="mb-65">Buy Now </p>
+                                    {data && data.data.data.map((item) => (
+                                        <div>
+                                            <div className="single-hero-slider single-animation-wrap"
+                                                style={{ backgroundImage:`${API_URL + item.image}`, position: 'relative' }}>
+                                                <div className="slider-content">
+                                                    <a href="product-details.html" style={{ zIndex: "98988"}}>
+                                                        <h1 className="display-2 mb-40" style={{ color: "white" }}>
+                                                           {item.title}
+                                                        </h1>
+                                                    </a>
+                                                    <p className="mb-65">Buy Now </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <div className="single-hero-slider single-animation-wrap"
-                                            style={{ backgroundImage: `url(media/carousel/slider-2.png)`, position: 'relative' }}>
-                                            <div className="slider-content">
-                                                <a href="product-details.html">
-                                                    <h1 className="display-2 mb-40" >
-                                                        Up To 700 Shooping <br />Big discount
-                                                    </h1>
-                                                </a>
-                                                <p className="mb-65" >Sign up for the daily newsletter</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </Slider>
                             </div>
                             <div className="slider-arrow hero-slider-1-arrow"></div>

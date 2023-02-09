@@ -1,7 +1,9 @@
+
 import React from "react";
 
 function Banner() {
-    return(
+
+    return (
         <section className="banners mb-25">
             <div className="container">
                 <div className="row">
@@ -22,7 +24,7 @@ function Banner() {
                             <img src="media/ads/middlebar/banner-1.png" alt="" />
                             <div className="banner-text">
                                 <h4>
-                                    New Cloth for all 
+                                    New Cloth for all
                                 </h4>
                                 <a href="product-details.html" className="btn btn-xs">Shop Now <i
                                     className="fi-rs-arrow-small-right"></i></a>
