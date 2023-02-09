@@ -18,7 +18,6 @@ function HomeSlider() {
     };
 
     const [data, setData] = useState();
-    console.log(data, "bannerr");
     const API_URL = "http://127.0.0.1:8000/";
 
     const getusers = () => {

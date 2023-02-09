@@ -47,7 +47,6 @@ function BestSeller() {
 
   const [data, setData] = useState();
   const API_URL = "http://127.0.0.1:8000/"
-  console.log(data);
 
   const getusers = () => {
     axios.get("http://127.0.0.1:8000/api/v1/bestsell")

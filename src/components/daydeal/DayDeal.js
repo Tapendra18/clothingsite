@@ -4,8 +4,15 @@ import axios from "axios";
 function DayDeal() {
 
     const [data, setData] = useState();
-    console.log(data, "daydeal");
+    const [item, setItem] = useState();
     const API_URL = "http://127.0.0.1:8000/";
+    const API_URL2 = "http://127.0.0.1:8000/";
+
+    const getTopsell = () => {
+        axios.get("http://127.0.0.1:8000/api/v1/topsell")
+            .then(response => setItem(response))
+            .catch(err => console.log(err))
+    }
 
     const getusers = () => {
         axios.get("http://127.0.0.1:8000/api/v1/daydeal")
@@ -15,6 +22,7 @@ function DayDeal() {
 
     useEffect(() => {
         getusers();
+        getTopsell();
     }, []);
     return (
         <>
@@ -27,8 +35,8 @@ function DayDeal() {
                             <i className="fi-rs-angle-right"></i>
                         </a>
                     </div>
-                    
-                        <div className="row">
+
+                    <div className="row">
                         {data && data.data.data.map((item) => (
                             <div className=" col-xl-3 col-lg-4 col-md-6">
                                 <div className="product-cart-wrap style-2 wow animate__animated animate__fadeInUp"
@@ -65,9 +73,9 @@ function DayDeal() {
                                     </div>
                                 </div>
                             </div>
-                       
-                    ))}
-                     </div>
+
+                        ))}
+                    </div>
 
                 </div>
             </section>
@@ -78,283 +86,119 @@ function DayDeal() {
                         <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp"
                             data-wow-delay="0">
                             <h4 className="section-title style-1 mb-30 animated animated">Top Selling</h4>
+
                             <div className="product-list-small animated animated">
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/test-1"><img
-                                            src="media/products/imgs/product-8-1_rqJCr3m.jpg" alt="test 1" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/test-1">test 1</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '40%' }}></div>
+                                {item && item.data.data.map((datas) => (
+                                    <article className="row align-items-center hover-up">
+                                        <figure className="col-md-4 mb-0">
+                                            <a href="/product-details/test-1"><img
+                                                src={`${API_URL2 + datas.image}`} alt="test 1" /></a>
+                                        </figure>
+                                        <div className="col-md-8 mb-0">
+                                            <h6>
+                                                <a href="/product-details/test-1">{datas.title}</a>
+                                            </h6>
+                                            <div className="product-rate-cover">
+                                                <div className="product-rate d-inline-block">
+                                                    <div className="product-rating" style={{ width: '40%' }}></div>
+                                                </div>
+                                                <span className="font-small ml-5 text-muted"> (1)</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (1)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD1.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/canada-dry-ginger-ale-2-l-bottle-200ml-400g"><img
-                                            src="media/products/imgs/product-4-1.jpg"
-                                            alt="Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/canada-dry-ginger-ale-2-l-bottle-200ml-400g">Canada
-                                                Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '80%' }}></div>
+                                            <div className="product-price">
+                                                <span>{datas.price}</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (1)</span>
                                         </div>
-                                        <div className="product-price">
-                                            <span>USD15.0</span>
-                                            <span className="old-price">USD19.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/test-2"><img
-                                            src="media/products/imgs/product-10-1_qcoPzVu.jpg" alt="test 2" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/test-2">test 2</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '0%' }}></div>
-                                            </div>
-                                            <span className="font-small ml-5 text-muted"> (0)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD2.0</span>
-                                        </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                ))}
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-4 col-md-6 mb-md-0 wow animate__animated animate__fadeInUp"
                             data-wow-delay=".1s">
                             <h4 className="section-title style-1 mb-30 animated animated">Trending Products</h4>
                             <div className="product-list-small animated animated">
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/gortons-beer-battered-fish-fillets-with-soft-paper"><img
-                                            src="media/products/imgs/product-2-1.jpg"
-                                            alt="Gorton’s Beer Battered Fish Fillets with soft paper" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/gortons-beer-battered-fish-fillets-with-soft-paper">Gorton’s
-                                                Beer Battered Fish Fillets with soft paper</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '60%' }}></div>
+                                {item && item.data.data.map((datae) => (
+                                    <article className="row align-items-center hover-up">
+                                        <figure className="col-md-4 mb-0">
+                                            <a href="/product-details/gortons-beer-battered-fish-fillets-with-soft-paper"><img
+                                                src={`${API_URL2 + datae.image}`}
+                                                alt="Gorton’s Beer Battered Fish Fillets with soft paper" /></a>
+                                        </figure>
+                                        <div className="col-md-8 mb-0">
+                                            <h6>
+                                                <a href="/product-details/gortons-beer-battered-fish-fillets-with-soft-paper">Gorton’s
+                                                    {datae.title}</a>
+                                            </h6>
+                                            <div className="product-rate-cover">
+                                                <div className="product-rate d-inline-block">
+                                                    <div className="product-rating" style={{ width: '60%' }}></div>
+                                                </div>
+                                                <span className="font-small ml-5 text-muted"> (1)</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (1)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD16.0</span>
-                                            <span className="old-price">USD19.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn"><img
-                                            src="media/products/imgs/product-8-1.jpg"
-                                            alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">Angie’s
-                                                Boomchickapop Sweet &amp; Salty Kettle Corn</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '50%' }}></div>
+                                            <div className="product-price">
+                                                <span>{datae.price}</span>
+                                                <span className="old-price">USD19.0</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (2)</span>
                                         </div>
-                                        <div className="product-price">
-                                            <span>USD15.0</span>
-                                            <span className="old-price">USD16.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/test-1"><img
-                                            src="media/products/imgs/product-8-1_rqJCr3m.jpg" alt="test 1" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/test-1">test 1</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '40%' }}></div>
-                                            </div>
-                                            <span className="font-small ml-5 text-muted"> (1)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD1.0</span>
-                                        </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                ))}
+
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__animated animate__fadeInUp"
                             data-wow-delay=".2s">
                             <h4 className="section-title style-1 mb-30 animated animated">Recently added</h4>
                             <div className="product-list-small animated animated">
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/test-1"><img
-                                            src="media/products/imgs/product-8-1_rqJCr3m.jpg" alt="test 1" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/test-1">test 1</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '40%' }}></div>
+                                {item && item.data.data.map((datae) => (
+                                    <article className="row align-items-center hover-up">
+                                        <figure className="col-md-4 mb-0">
+                                            <a href="/product-details/test-1"><img
+                                                src={`${API_URL2 + datae.image}`} alt="test 1" /></a>
+                                        </figure>
+                                        <div className="col-md-8 mb-0">
+                                            <h6>
+                                                <a href="/product-details/test-1">{datae.title}</a>
+                                            </h6>
+                                            <div className="product-rate-cover">
+                                                <div className="product-rate d-inline-block">
+                                                    <div className="product-rating" style={{ width: '40%' }}></div>
+                                                </div>
+                                                <span className="font-small ml-5 text-muted"> (1)</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (1)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD1.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn"><img
-                                            src="media/products/imgs/product-8-1.jpg"
-                                            alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">Angie’s
-                                                Boomchickapop Sweet &amp; Salty Kettle Corn</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '50%' }}></div>
+                                            <div className="product-price">
+                                                <span>{datae.price}</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (2)</span>
                                         </div>
-                                        <div className="product-price">
-                                            <span>USD15.0</span>
-                                            <span className="old-price">USD16.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/seeds-of-change-organic-quinoa-brown-red-rice"><img
-                                            src="media/products/imgs/product-10-1.jpg"
-                                            alt="Seeds of Change Organic Quinoa, Brown, &amp; Red Rice" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/seeds-of-change-organic-quinoa-brown-red-rice">Seeds
-                                                of Change Organic Quinoa, Brown, &amp; Red Rice</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '0%' }}></div>
-                                            </div>
-                                            <span className="font-small ml-5 text-muted"> (0)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD12.0</span>
-                                            <span className="old-price">USD15.0</span>
-                                        </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                ))}
+
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-xl-block wow animate__animated animate__fadeInUp"
                             data-wow-delay=".3s">
                             <h4 className="section-title style-1 mb-30 animated animated">Top Rated</h4>
                             <div className="product-list-small animated animated">
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/test-1"><img
-                                            src="media/products/imgs/product-8-1_rqJCr3m.jpg" alt="test 1" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/test-1">test 1</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '40%' }}></div>
+                                {item && item.data.data.map((datae) => (
+                                    <article className="row align-items-center hover-up">
+                                        <figure className="col-md-4 mb-0">
+                                            <a href="/product-details/test-1"><img
+                                                src={`${API_URL2 + datae.image}`} alt="test 1" /></a>
+                                        </figure>
+                                        <div className="col-md-8 mb-0">
+                                            <h6>
+                                                <a href="/product-details/test-1">{datae.title}</a>
+                                            </h6>
+                                            <div className="product-rate-cover">
+                                                <div className="product-rate d-inline-block">
+                                                    <div className="product-rating" style={{ width: '40%' }}></div>
+                                                </div>
+                                                <span className="font-small ml-5 text-muted"> (1)</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (1)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD1.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn"><img
-                                            src="media/products/imgs/product-8-1.jpg"
-                                            alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">Angie’s
-                                                Boomchickapop Sweet &amp; Salty Kettle Corn</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '50%' }}></div>
+                                            <div className="product-price">
+                                                <span>{datae.price}</span>
                                             </div>
-                                            <span className="font-small ml-5 text-muted"> (2)</span>
                                         </div>
-                                        <div className="product-price">
-                                            <span>USD15.0</span>
-                                            <span className="old-price">USD16.0</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article className="row align-items-center hover-up">
-                                    <figure className="col-md-4 mb-0">
-                                        <a href="/product-details/test-2"><img
-                                            src="media/products/imgs/product-10-1_qcoPzVu.jpg" alt="test 2" /></a>
-                                    </figure>
-                                    <div className="col-md-8 mb-0">
-                                        <h6>
-                                            <a href="/product-details/test-2">test 2</a>
-                                        </h6>
-                                        <div className="product-rate-cover">
-                                            <div className="product-rate d-inline-block">
-                                                <div className="product-rating" style={{ width: '0%' }}></div>
-                                            </div>
-                                            <span className="font-small ml-5 text-muted"> (0)</span>
-                                        </div>
-                                        <div className="product-price">
-                                            <span>USD2.0</span>
-                                        </div>
-                                    </div>
-                                </article>
+                                    </article>
+                                ))}
                             </div>
                         </div>
                     </div>
