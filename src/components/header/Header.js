@@ -17,8 +17,8 @@ function Header() {
                             <div className="col-xl-3 col-lg-4">
                                 <div className="header-info">
                                     <ul>
-                                        <li><a href="/pages/about-us">About Us</a></li>
-                                        <li><a href="/dashboard/">My Account</a></li>
+                                        <li><a href="/about-us">About Us</a></li>
+                                        <li><a href="/login">My Account</a></li>
 
                                     </ul>
                                 </div>

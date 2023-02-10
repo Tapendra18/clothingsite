@@ -16,6 +16,7 @@ import OfficeStationary from "./components/office-stationery/OfficeStationary";
 import ConsumerElectronics from "./components/consumer-electronics/ConsumerElectronics";
 import FashionAccessories from "./components/fashion-accessories/FashionAccessories";
 import HomeFurniture from "./components/home-furniture/HomeFurniture";
+import CategoryList from "./components/category-list/CategoryList";
 import 'react-toastify/dist/ReactToastify.css';
 import Health from "./components/health-personal-care/Health";
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/FashionAccessories" element={<FashionAccessories />} />
         <Route path="/furniture" element={<HomeFurniture />} />
         <Route path="/health" element={<Health />} />
+        <Route path="/categorylist" element={<CategoryList />} />
       </Routes>
     </>
   );

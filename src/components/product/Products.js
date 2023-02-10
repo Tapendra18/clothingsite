@@ -4,8 +4,7 @@ import axios from "axios";
 import { additem } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 
-function Products(props) {
-
+function Products() {
     const [data, setData] = useState();
     const API_URL = "http://127.0.0.1:8000/"
 
@@ -23,7 +22,8 @@ function Products(props) {
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
-        const item = { ...props }
+
+        const item = {}
         dispatch(additem(item));
 
         isAdded(true);
@@ -65,18 +65,18 @@ function Products(props) {
                                         </div>
                                         <div className="product-content-wrap">
                                             <div className="product-category">
-                                                <a href="/shop/super/food-beverage">{item.title}</a>
+                                                <a href="/shop/super/food-beverage">{item.title} </a>
                                             </div>
                                             <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">{item.subtitle}</a>
                                             <div className="product-rate-cover">
                                                 <div className="product-rate d-inline-block">
                                                     <div className="product-rating" style={{ width: '50%' }}></div>
                                                 </div>
-                                                <span className="font-small ml-5 text-muted"> (2)</span>
+                                                <span className="font-small ml-5 text-muted"> (2.5)</span>
                                             </div>
                                             <div>
                                                 <span className="font-small text-muted">By <a
-                                                    href="/vendor-details/hambger">Hambger Hel</a></span>
+                                                    href="/vendor-details/hambger">dhaman dokhla</a></span>
                                             </div>
                                             <div className="product-card-bottom">
                                                 <div className="product-price">
@@ -87,8 +87,10 @@ function Products(props) {
                                                     <button className="add"
                                                         onClick={handleAddToCart}
                                                         type="button"
-                                                        href="/cart"><i
-                                                        className="fi-rs-eye mr-5"></i>{added ? 'View ' : 'Add to cart'} </button>
+                                                        key={item._id}
+
+                                                    ><i
+                                                        className="fi-rs-eye mr-5"></i>{added ? 'Add to cart ' : 'view'} </button>
                                                 </div>
                                             </div>
                                         </div>
