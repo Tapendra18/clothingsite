@@ -6,7 +6,7 @@ import Header from '../header/Header';
 const ProductDetail = () => {
     return (
         <>
-         <Header />
+            <Header />
             <main className="main">
                 <div className="page-header breadcrumb-wrap">
                     <div className="container">
@@ -29,18 +29,18 @@ const ProductDetail = () => {
 
                                                     <div className="product-image-slider">
                                                         <figure className="border-radius-10">
-                                                            <img src="/media/products/imgs/product-1-1_mVTpJyf.jpg" alt="product image" />
+                                                            <img src="media/products/imgs/product-1-1_mVTpJyf.jpg" alt="product image" />
                                                         </figure>
                                                         <figure className="border-radius-10">
-                                                            <img src="/media/products/imgs/product_imgs/product-2-2_8bh9sIN.jpg" alt="product image 2" />
+                                                            <img src="media/products/imgs/product_imgs/product-2-2_8bh9sIN.jpg" alt="product image 2" />
                                                         </figure>
                                                     </div>
 
                                                     <div className="slider-nav-thumbnails">
                                                         <div>
-                                                            <img src="/media/products/imgs/product-1-1_mVTpJyf.jpg" alt="product image" />
+                                                            <img src="media/products/imgs/product-1-1_mVTpJyf.jpg" alt="product image" />
                                                         </div>
-                                                        <div><img src="/media/products/imgs/product_imgs/product-2-2_8bh9sIN.jpg" alt="product image" /></div>
+                                                        <div><img src="media/products/imgs/product_imgs/product-2-2_8bh9sIN.jpg" alt="product image" /></div>
                                                     </div>
                                                 </div>
 
@@ -184,7 +184,7 @@ const ProductDetail = () => {
                                                     </div>
                                                     <div className="tab-pane fade" id="Vendor-info">
                                                         <div className="vendor-logo d-flex mb-30">
-                                                            <img src="/media/profile_pic/vendor-8_tnY9gFy.png" width="64" height="50" alt="Totino&#x27;s Pizza" />
+                                                            <img src="media/profile_pic/vendor-8_tnY9gFy.png" width="64" height="50" alt="Totino&#x27;s Pizza" />
                                                             <div className="vendor-name ml-15">
                                                                 <h6>
                                                                     <a href="/vendor-details/pizza">Totino&#x27;s Pizza</a>
@@ -192,8 +192,8 @@ const ProductDetail = () => {
                                                             </div>
                                                         </div>
                                                         <ul className="contact-infor mb-20">
-                                                            <li><img src="/static/assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>5171 W Campbell Ave cairo,Utah 53127 United States</span></li>
-                                                            <li><img src="/static/assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Contact Seller:</strong><span>3432432423</span></li>
+                                                            <li><img src="static/assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>5171 W Campbell Ave cairo,Utah 53127 United States</span></li>
+                                                            <li><img src="static/assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Contact Seller:</strong><span>3432432423</span></li>
                                                         </ul>
                                                         <p>Got a smooth, buttery spread in your fridge? Chances are good that it&#x27;s Good Chef. This brand made Lionto&#x27;s list of the most popular grocery brands across the country. </p>
                                                     </div>
@@ -254,7 +254,7 @@ const ProductDetail = () => {
                                                         <div className="product-cart-wrap hover-up">
                                                             <div className="product-img-action-wrap">
                                                                 <div className="product-img product-img-zoom">
-                                                                    <a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" tabindex="0">
+                                                                    <a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup">
                                                                         <img className="default-img" src="/media/products/imgs/product-1-1_mVTpJyf.jpg" alt="" />
                                                                         <img className="hover-img" src="/media/products/imgs/product-1-1_mVTpJyf.jpg" alt="" />
                                                                     </a>
@@ -264,7 +264,7 @@ const ProductDetail = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="product-content-wrap">
-                                                                <h2><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" tabindex="0">Haagen-Dazs Caramel Cone Ice Cream Ketc…</a></h2>
+                                                                <h2><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" >Haagen-Dazs Caramel Cone Ice Cream Ketc…</a></h2>
                                                                 <div className="rating-result" title="0%">
                                                                     <span> </span>
                                                                 </div>
@@ -290,7 +290,7 @@ const ProductDetail = () => {
                                                         <div className="product-cart-wrap hover-up">
                                                             <div className="product-img-action-wrap">
                                                                 <div className="product-img product-img-zoom">
-                                                                    <a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" tabindex="0">
+                                                                    <a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup">
                                                                         <img className="default-img" src="/media/products/imgs/product-1-1_mVTpJyf.jpg" alt="" />
                                                                         <img className="hover-img" src="/media/products/imgs/product-1-1_mVTpJyf.jpg" alt="" />
                                                                     </a>
@@ -300,7 +300,7 @@ const ProductDetail = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="product-content-wrap">
-                                                                <h2><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" tabindex="0">Haagen-Dazs Caramel Cone Ice Cream Ketc…</a></h2>
+                                                                <h2><a href="product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" >Haagen-Dazs Caramel Cone Ice Cream Ketc…</a></h2>
                                                                 <div className="rating-result" title="0%">
                                                                     <span> </span>
                                                                 </div>
@@ -321,7 +321,7 @@ const ProductDetail = () => {
                                     <div className="sidebar-widget widget-vendor mb-30 bg-grey-9 box-shadow-none">
                                         <h5 className="section-title style-3 mb-20">Vendor</h5>
                                         <div className="vendor-logo d-flex mb-30">
-                                            <img src="/media/profile_pic/vendor-8_tnY9gFy.png" width="64" height="50" alt="Totino&#x27;s Pizza" />
+                                            <img src="media/profile_pic/vendor-8_tnY9gFy.png" width="64" height="50" alt="Totino&#x27;s Pizza" />
                                             <div className="vendor-name ml-15">
                                                 <h6>
                                                     <a href="/vendor-details/pizza">Totino&#x27;s Pizza</a>
@@ -329,20 +329,20 @@ const ProductDetail = () => {
                                             </div>
                                         </div>
                                         <ul className="contact-infor">
-                                            <li><img src="/static/assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>5171 W Campbell Ave cairo, Utah 53127 United States</span></li>
-                                            <li><img src="/static/assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Contact Seller:</strong><span>3432432423</span></li>
+                                            <li><img src="static/assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>5171 W Campbell Ave cairo, Utah 53127 United States</span></li>
+                                            <li><img src="static/assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Contact Seller:</strong><span>3432432423</span></li>
                                             <li className="hr"><span></span></li>
                                         </ul>
                                         <ul>
                                         </ul>
-                                        <p>Become a Vendor? <a href="/supplier-register/"> Register now</a></p>
+                                        <p>Become a Vendor? <a href="/supplier-register"> Register now</a></p>
                                     </div>
 
                                     <div className="sidebar-widget product-sidebar mb-30 p-30 bg-grey border-radius-10">
                                         <h5 className="section-title style-1 mb-30">New products</h5>
                                         <div className="single-post clearfix">
                                             <div className="image">
-                                                <img src="/media/products/imgs/product-1-1_mVTpJyf.jpg" style={{ width: "80px", height: "80px" }} alt="Haagen-Dazs Caramel Cone Ice Cream Ketchup" />
+                                                <img src="media/products/imgs/product-1-1_mVTpJyf.jpg" style={{ width: "80px", height: "80px" }} alt="Haagen-Dazs Caramel Cone Ice Cream Ketchup" />
                                             </div>
                                             <div className="content pt-10">
                                                 <h6><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup">Haagen-Dazs C…</a></h6>
@@ -354,7 +354,7 @@ const ProductDetail = () => {
                                         </div>
                                         <div className="single-post clearfix">
                                             <div className="image">
-                                                <img src="/media/products/imgs/product-7-1.jpg" style={{ width: "80px", height: "80px" }} alt="Foster Farms Takeout Crispy classNameic Buffalo Wings" />
+                                                <img src="media/products/imgs/product-7-1.jpg" style={{ width: "80px", height: "80px" }} alt="Foster Farms Takeout Crispy classNameic Buffalo Wings" />
                                             </div>
                                             <div className="content pt-10">
                                                 <h6><a href="/product-details/foster-farms-takeout-crispy-classNameic-buffalo-wings">Foster Farms …</a></h6>
@@ -366,7 +366,7 @@ const ProductDetail = () => {
                                         </div>
                                         <div className="single-post clearfix">
                                             <div className="image">
-                                                <img src="/media/products/imgs/product-8-1.jpg" style={{ width: "80px", height: "80px" }} alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
+                                                <img src="media/products/imgs/product-8-1.jpg" style={{ width: "80px", height: "80px" }} alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
                                             </div>
                                             <div className="content pt-10">
                                                 <h6><a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">Angie’s Boomc…</a></h6>
@@ -392,7 +392,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </main >
-          <Footer />
+            <Footer />
         </>
     )
 }
