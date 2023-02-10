@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Footer from '../footer/Footer';
+import Header from '../header/Header';
+
 
 const ProductDetail = () => {
     return (
         <>
+         <Header />
             <main className="main">
                 <div className="page-header breadcrumb-wrap">
                     <div className="container">
@@ -47,7 +51,7 @@ const ProductDetail = () => {
                                                     <div className="product-detail-rating">
                                                         <div className="product-rate-cover text-end">
                                                             <div className="product-rate d-inline-block">
-                                                                <div className="product-rating" style="width: 0%"></div>
+                                                                <div className="product-rating" style={{ width: "0%" }}></div>
 
                                                             </div>
                                                             <span className="font-small ml-5 text-muted"> (0 reviews)</span>
@@ -338,37 +342,37 @@ const ProductDetail = () => {
                                         <h5 className="section-title style-1 mb-30">New products</h5>
                                         <div className="single-post clearfix">
                                             <div className="image">
-                                                <img src="/media/products/imgs/product-1-1_mVTpJyf.jpg" width="80" height="80" style="width:80px;height:80px;" alt="Haagen-Dazs Caramel Cone Ice Cream Ketchup" />
+                                                <img src="/media/products/imgs/product-1-1_mVTpJyf.jpg" style={{ width: "80px", height: "80px" }} alt="Haagen-Dazs Caramel Cone Ice Cream Ketchup" />
                                             </div>
                                             <div className="content pt-10">
                                                 <h6><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup">Haagen-Dazs C…</a></h6>
                                                 <p className="price mb-0 mt-5">USD 13.0</p>
                                                 <div className="product-rate">
-                                                    <div className="product-rating" style="width: 0%"></div>
+                                                    <div className="product-rating" style={{ width: "0%" }}></div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="single-post clearfix">
                                             <div className="image">
-                                                <img src="/media/products/imgs/product-7-1.jpg" width="80" height="80" style="width:80px;height:80px;" alt="Foster Farms Takeout Crispy classNameic Buffalo Wings" />
+                                                <img src="/media/products/imgs/product-7-1.jpg" style={{ width: "80px", height: "80px" }} alt="Foster Farms Takeout Crispy classNameic Buffalo Wings" />
                                             </div>
                                             <div className="content pt-10">
                                                 <h6><a href="/product-details/foster-farms-takeout-crispy-classNameic-buffalo-wings">Foster Farms …</a></h6>
                                                 <p className="price mb-0 mt-5">USD 14.0</p>
                                                 <div className="product-rate">
-                                                    <div className="product-rating" style="width: 67%"></div>
+                                                    <div className="product-rating" style={{ width: "67%" }}></div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="single-post clearfix">
                                             <div className="image">
-                                                <img src="/media/products/imgs/product-8-1.jpg" width="80" height="80" style="width:80px;height:80px;" alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
+                                                <img src="/media/products/imgs/product-8-1.jpg" style={{ width: "80px", height: "80px" }} alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
                                             </div>
                                             <div className="content pt-10">
                                                 <h6><a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">Angie’s Boomc…</a></h6>
                                                 <p className="price mb-0 mt-5">USD 15.0</p>
                                                 <div className="product-rate">
-                                                    <div className="product-rating" style="width: 50%"></div>
+                                                    <div className="product-rating" style={{ width: "50%" }}></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -388,6 +392,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </main >
+          <Footer />
         </>
     )
 }
