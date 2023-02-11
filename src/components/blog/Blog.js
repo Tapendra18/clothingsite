@@ -3,6 +3,14 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import axios from "axios";
 import { BiLike, BiDislike } from "react-icons/bi";
+import {
+  FacebookShareButton,
+  WhatsappShareButton,
+  WhatsappIcon,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+} from 'react-share';
 
 const Blog = () => {
 
@@ -10,6 +18,7 @@ const Blog = () => {
   const [comments, setComment] = useState({
     comment: ""
   });
+  const shareUrl = 'https://www.pakkamarwadi.tk/';
   const [showcomment, setShowComment] = useState();
   console.log(showcomment, "showwwww");
 
@@ -100,13 +109,37 @@ const Blog = () => {
                                 alt=""
                               />
                             </a>
-                            <div style={{display:"flex"}}>
+                            <div style={{ display: "flex", justifyContent: "center", alignItems: 'center' }}>
                               <h1 style={{ cursor: "pointer" }} onClick={onlike}>
                                 <BiLike />
                               </h1>
                               <h2 style={{ cursor: "pointer" }} onClick={onunlike}>
                                 <BiDislike />
                               </h2>
+                            </div>
+                            <div>
+                              <FacebookShareButton
+                                url={shareUrl}
+                                quote={'Title or jo bhi aapko likhna ho'}
+                                hashtag={'#portfolio...'}
+                              >
+                                <FacebookIcon size={40} round={true} />
+                              </FacebookShareButton>
+
+                              <WhatsappShareButton
+                                url={shareUrl}
+                                quote={'Title or jo bhi aapko likhna ho'}
+                                hashtag={'#portfolio...'}
+                              >
+                                <WhatsappIcon size={40} round={true} />
+                              </WhatsappShareButton>
+                              <TwitterShareButton 
+                               url={shareUrl}
+                               quote={'Title or jo bhi aapko likhna ho'}
+                               hashtag={'#portfolio...'}
+                              >
+                                <TwitterIcon size={40} round={true} />
+                              </TwitterShareButton>
                             </div>
 
                           </div>
