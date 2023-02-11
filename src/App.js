@@ -45,6 +45,7 @@ function App() {
         <Route path="/health" element={<Health />} />
         <Route path="/categorylist" element={<CategoryList />} />
         <Route path="/productdetail" element={<ProductDetail />} />
+        <Route path="/categorylist" element={<CategoryList />} />
       </Routes>
     </>
   );

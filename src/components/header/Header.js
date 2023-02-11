@@ -214,13 +214,13 @@ function Header() {
                                     <nav>
                                         <ul>
                                             <li>
-                                                <a className="active" href="index.html">Home <i className="fi-rs-angle-down"></i></a>
-                                                <ul className="sub-menu">
+                                                <a className="active" href="/">Home <i className="fi-rs-angle-down"></i></a>
+                                                {/* <ul className="sub-menu">
                                                     <li><a href="index.html">Home 1</a></li>
                                                     <li><a href="home-2.html">Home 2</a></li>
                                                     <li><a href="/home-3/">Home 3</a></li>
                                                     <li><a href="/home-4/">Home 4</a></li>
-                                                </ul>
+                                                </ul> */}
                                             </li>
                                             <li className="position-static hot-deals">
                                                 <img src="static/assets/imgs/theme/icons/icon-hot-white.svg"
@@ -309,7 +309,7 @@ function Header() {
                                             </li>
 
                                             <li className="position-static">
-                                                <a href="category-list.html">Categories </a>
+                                                <a href="/categorylist">Categories </a>
                                             </li>
                                             <li>
                                                 <a href="/supplier-list">Stores</a>
