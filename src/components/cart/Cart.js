@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import "./cart.css";
-import Footer from '../footer/Footer'
+import Footer from '../footer/Footer';
 import Header from '../header/Header';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,7 +37,7 @@ const Cart = () => {
         )
     }, [isCartOpen])
 
-    const cartQuantity = cartItems;
+    const cartQuantity = cartItems?.length;
 
     // const cartTotal = cartItems.map(item => item.price * item.quantity).reduce((prevValue, currValue )=>prevValue + currValue ,0)
     return (

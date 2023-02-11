@@ -1,8 +1,20 @@
 import React from "react";
-import './Header.css'
+import './Header.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCart } from '../../store/slices/cartSlice';
 
 
 function Header() {
+
+    const {cartItems} = useSelector((state)=> state.cart);
+
+    const dispatch = useDispatch();
+
+    const handleOpenCart = (open) =>{
+        dispatch(toggleCart(open));
+    }
+
+    const cartQuantity = cartItems?.length
 
     return (
         <>
@@ -97,9 +109,11 @@ function Header() {
                                 <div className="header-action-right">
                                     <div className="header-action-2">
                                         <div className="header-action-icon-2">
-                                            <a className="mini-cart-icon" href="/cart">
+                                            <a className="mini-cart-icon" href="/cart" 
+                                                onClick={()=> handleOpenCart(true)}
+                                                >
                                                 <img alt="Nest" src="static/assets/imgs/theme/icons/icon-cart.svg" />
-                                                <span className="pro-count blue">0</span>
+                                                <span className="pro-count blue">{cartQuantity}</span>
                                             </a>
                                             <a href="/cart"><span className="lable">Cart</span></a>
                                         </div>

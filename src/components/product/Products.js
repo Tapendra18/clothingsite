@@ -4,7 +4,7 @@ import axios from "axios";
 import { additem } from "../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 
-function Products() {
+function Products(props) {
     const [data, setData] = useState();
     const API_URL = "http://127.0.0.1:8000/"
 
@@ -20,10 +20,12 @@ function Products() {
 
     const [added, isAdded] = useState(false);
     const dispatch = useDispatch();
+    // const { img, rating, title, price } = props;
+
 
     const handleAddToCart = () => {
 
-        const item = {}
+        const item = {...props}
         dispatch(additem(item));
 
         isAdded(true);
