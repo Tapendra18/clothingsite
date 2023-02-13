@@ -7,11 +7,19 @@ const CategoryList = () => {
 
     const [data, setData] = useState();
     const [women, setwomen] = useState();
+    const [kid, setKid] = useState();
+
 
 
     const API_URL = "http://127.0.0.1:8000/"
     const API_URL2 = "http://127.0.0.1:8000/"
 
+
+    const kidusers = () => {
+        axios.get("http://127.0.0.1:8000/api/v1/kid")
+            .then(response => setKid(response))
+            .catch(err => console.log(err))
+    }
 
     const womenusers = () => {
         axios.get("http://127.0.0.1:8000/api/v1/women")
@@ -28,6 +36,7 @@ const CategoryList = () => {
     useEffect(() => {
         getusers();
         womenusers();
+        kidusers();
     }, []);
     return (
         <>
@@ -91,16 +100,19 @@ const CategoryList = () => {
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
                                     <a href="/shop/super/consumer-electronics"><h4 className="section-title style-1 mb-30 animated animated">Kid's</h4></a>
                                     <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/mobile-phones-tablets"><img src="media/categories/main/imgs/034fdb3fb17a294dfe7bf82b50877fac.webp " alt=" Mobile Phones &amp; Tablets" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/mobile-phones-tablets"> T-shirt</a>
-                                                </h6>
-                                            </div>
-                                        </article>
+                                        {kid && kid.data.data.map((item) => (
+                                            <article className="row align-items-center hover-up">
+                                                <figure className="col-md-4 mb-0">
+                                                    <a href="/shop/main/mobile-phones-tablets"><img src={`${API_URL2 + item.image}`} alt=" Mobile Phones &amp; Tablets" /></a>
+                                                </figure>
+                                                <div className="col-md-8 mb-0">
+                                                    <h6>
+                                                        <a href="/shop/main/mobile-phones-tablets"> {item.title}</a>
+                                                    </h6>
+                                                </div>
+                                            </article>
+                                        ))}
+
                                     </div>
                                 </div>
                             </div>
