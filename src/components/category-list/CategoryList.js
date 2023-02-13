@@ -1,8 +1,23 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 
 const CategoryList = () => {
+
+    const [data, setData] = useState();
+    const API_URL = "http://127.0.0.1:8000/"
+
+
+    const getusers = () => {
+        axios.get("http://127.0.0.1:8000/api/v1/mens")
+            .then(response => setData(response))
+            .catch(err => console.log(err));
+    }
+
+    useEffect(() => {
+        getusers();
+    }, []);
     return (
         <>
             <Header />
@@ -28,102 +43,24 @@ const CategoryList = () => {
                         <div className="col-lg-4-5">
                             <div className="row product-grid">
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/food-beverage"><h4 className="section-title style-1 mb-30 animated animated">Food &amp; Beverage</h4></a>
+                                    <a href="/shop/super/food-beverage"><h4 className="section-title style-1 mb-30 animated animated">men's clothing</h4></a>
                                     <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/custard-apple"><img src="media/categories/main/imgs/cat-5.png " alt=" Custard apple" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/custard-apple"> Custard apple</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/coffe-tea"><img src="media/categories/main/imgs/cat-14.png " alt=" Coffe &amp; Tea" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/coffe-tea"> Coffe &amp; Tea</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/cake-milk"><img src="media/categories/main/imgs/cat-13_AYk2np9.png " alt=" Cake &amp; Milk" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/cake-milk"> Cake &amp; Milk</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/oganic-kiwi"><img src="media/categories/main/imgs/cat-12_SwJb7aF.png " alt=" Oganic Kiwi" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/oganic-kiwi"> Oganic Kiwi</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/red-apple"><img src="media/categories/main/imgs/cat-9_Ks6xB71.png " alt=" Red Apple" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/red-apple"> Red Apple</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/snack"><img src="media/categories/main/imgs/cat-3_1.png " alt=" Snack" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/snack"> Snack</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/vegetables"><img src="media/categories/main/imgs/cat-1_aibGMBs.png " alt=" Vegetables" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/vegetables"> Vegetables</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/strawberry"><img src="media/categories/main/imgs/cat-2_gcBQ13i.png " alt=" Strawberry" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/strawberry"> Strawberry</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/black-plum"><img src="media/categories/main/imgs/cat-4.png " alt=" Black plum" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/black-plum"> Black plum</a>
-                                                </h6>
-                                            </div>
-                                        </article>
+                                        {data && data.data.data.map((item) => (
+                                            <article className="row align-items-center hover-up">
+                                                <figure className="col-md-4 mb-0">
+                                                    <a href="/shop/main/custard-apple"><img  src={`${API_URL + item.image}`} alt=" Custard apple" /></a>
+                                                </figure>
+                                                <div className="col-md-8 mb-0">
+                                                    <h6>
+                                                        <a href="/shop/main/custard-apple">{item.title}</a>
+                                                    </h6>
+                                                </div>
+                                            </article>
+                                        ))}
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/beauty-fragrances"><h4 className="section-title style-1 mb-30 animated animated">Beauty &amp; Fragrances</h4></a>
+                                    <a href="/shop/super/beauty-fragrances"><h4 className="section-title style-1 mb-30 animated animated">Women</h4></a>
                                     <div className="product-list-small animated animated">
                                         <article className="row align-items-center hover-up">
                                             <figure className="col-md-4 mb-0">
@@ -131,29 +68,14 @@ const CategoryList = () => {
                                             </figure>
                                             <div className="col-md-8 mb-0">
                                                 <h6>
-                                                    <a href="/shop/main/makeup"> Makeup</a>
+                                                    <a href="/shop/main/makeup"> kurties</a>
                                                 </h6>
                                             </div>
                                         </article>
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/office-stationery"><h4 className="section-title style-1 mb-30 animated animated">Office &amp; Stationery</h4></a>
-                                    <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/books"><img src="media/categories/main/imgs/Books_c4668124e2.webp " alt=" Books" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/books"> Books</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/consumer-electronics"><h4 className="section-title style-1 mb-30 animated animated">Consumer Electronics</h4></a>
+                                    <a href="/shop/super/consumer-electronics"><h4 className="section-title style-1 mb-30 animated animated">Kid's</h4></a>
                                     <div className="product-list-small animated animated">
                                         <article className="row align-items-center hover-up">
                                             <figure className="col-md-4 mb-0">
@@ -161,114 +83,7 @@ const CategoryList = () => {
                                             </figure>
                                             <div className="col-md-8 mb-0">
                                                 <h6>
-                                                    <a href="/shop/main/mobile-phones-tablets"> Mobile Phones &amp; Tablets</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/fashion-accessories"><h4 className="section-title style-1 mb-30 animated animated">Fashion &amp; Accessories</h4></a>
-                                    <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/clothing"><img src="media/categories/main/imgs/Books_c4668124e2_1.webp " alt=" Clothing" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/clothing"> Clothing</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/home-furniture"><h4 className="section-title style-1 mb-30 animated animated">Home &amp; Furniture</h4></a>
-                                    <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/household-supplies"><img src="media/categories/main/imgs/3e50c6fd349f94d6fd41961681e84725.webp " alt=" Household Supplies" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/household-supplies"> Household Supplies</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/health-personal-care"><h4 className="section-title style-1 mb-30 animated animated">Health &amp; Personal Care</h4></a>
-                                    <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/health"><img src="media/categories/main/imgs/58f64b7c18e374c8405b98d6972a7b75.webp " alt=" Health" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/health"> Health</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/construction-hardware"><h4 className="section-title style-1 mb-30 animated animated">Construction &amp; Hardware</h4></a>
-                                    <div className="product-list-small animated animated">
-
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/tools-home-improvements"><img src="media/categories/main/imgs/3cfc55facd517d041fb7256c8f751fd5.webp " alt=" Tools &amp; Home Improvements" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/tools-home-improvements"> Tools &amp; Home Improvements</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/sports-fitness"><h4 className="section-title style-1 mb-30 animated animated">Sports &amp; Fitness</h4></a>
-                                    <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/fitness-training"><img src="media/categories/main/imgs/6545d863ea55fbd4863b2c4087825c64_1.webp " alt=" Fitness &amp; Training" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/fitness-training"> Fitness &amp; Training</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/toys"><h4 className="section-title style-1 mb-30 animated animated">Toys</h4></a>
-                                    <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/arts-crafts"><img src="media/categories/main/imgs/a6ed534511ece8690935680b9d6ad25e.webp " alt=" Arts &amp; Crafts" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/arts-crafts"> Arts &amp; Crafts</a>
-                                                </h6>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
-                                    <a href="/shop/super/automotive"><h4 className="section-title style-1 mb-30 animated animated">Automotive</h4></a>
-                                    <div className="product-list-small animated animated">
-
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/motorcycles"><img src="media/categories/main/imgs/71d3c3fba2e3a827377be873ccbd06ea.webp " alt=" Motorcycles" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/motorcycles"> Motorcycles</a>
+                                                    <a href="/shop/main/mobile-phones-tablets"> T-shirt</a>
                                                 </h6>
                                             </div>
                                         </article>
@@ -277,7 +92,7 @@ const CategoryList = () => {
                             </div>
 
                         </div>
-                        <div className="categories-dropdown-wrap col-lg-1-5 primary-sidebar sticky-sidebar" style={{width :"300px" , marginLeft:"-0px"}}>
+                        {/* <div className="categories-dropdown-wrap col-lg-1-5 primary-sidebar sticky-sidebar" style={{width :"300px" , marginLeft:"-0px"}}>
                             <div className="sidebar-widget widget-category-2 mb-30">
                                 <h5 className="section-title style-1 mb-30">Category</h5>
                                 <ul>
@@ -368,7 +183,7 @@ const CategoryList = () => {
                                     </h4></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </main>
