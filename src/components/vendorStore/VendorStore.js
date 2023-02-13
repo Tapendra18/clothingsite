@@ -56,42 +56,48 @@ function VendorStore() {
                                     //     </div>
                                     // </div>
                                     <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
-                                    <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
-                                        data-wow-delay=".0s">
-                                        <div className="product-img-action-wrap">
-                                            <div className="product-img product-img-zoom">
-                                                <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">
-                                                    <img className="default-img" src={`${API_URL + item.image}`}
-                                                        alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
-                                                </a>
-                                            </div>
-                                            <div className="product-action-1">
-                                            </div>
-                                        </div>
-                                        <div className="product-content-wrap">
-                                            <div className="product-category">
-                                                <a href="/shop/super/food-beverage">{item.year} </a>
-                                            </div>
-                                            <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">{item.company}</a>
-                                            <div className="product-rate-cover">
-                                                <div className="product-rate d-inline-block">
-                                                    <div className="product-rating" style={{ width: '50%' }}></div>
+                                        <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
+                                            data-wow-delay=".0s">
+                                            <div className="product-img-action-wrap">
+                                                <div className="product-img product-img-zoom">
+                                                    <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">
+                                                        <img className="default-img" src={`${API_URL + item.image}`}
+                                                            alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
+                                                    </a>
+                                                </div>
+                                                <div className="product-action-1">
                                                 </div>
                                             </div>
-                                            <div>
-                                                <a
-                                                    href="/vendor-details/hambger">{item.address}</a>
-                                            </div>
-                                            <div className="product-card-bottom">
-                                                <div className="product-price">
-                                                    <span>{item.contact}</span>
-                                                   
+                                            <div className="product-content-wrap">
+                                                <div className="product-category">
+                                                    <a href="/shop/super/food-beverage">{item.year} </a>
                                                 </div>
-                                               
+                                                <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">{item.company}</a>
+                                                <div className="product-rate-cover">
+                                                    <div className="product-rate d-inline-block">
+                                                        <div className="product-rating" style={{ width: '50%' }}></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a
+                                                        href="/vendor-details/hambger">{item.address}</a>
+                                                </div>
+                                                <div className="product-card-bottom">
+                                                    <div className="product-price">
+                                                        <span>{item.contact}</span>
+
+                                                    </div>
+
+                                                </div>
+                                                <div className="add-cart">
+                                                    <button className="add"
+                                                        type="button"
+                                                    ><i
+                                                        className="fi-rs-arrow mr-5"></i>visit store</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 ))
                             }
 
