@@ -20,6 +20,7 @@ import CategoryList from "./components/category-list/CategoryList";
 import 'react-toastify/dist/ReactToastify.css';
 import Health from "./components/health-personal-care/Health";
 import ProductDetail from "./components/productDetail/ProductDetail";
+import VendorStore from "./components/vendorStore/VendorStore";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/categorylist" element={<CategoryList />} />
         <Route path="/productdetail" element={<ProductDetail />} />
         <Route path="/categorylist" element={<CategoryList />} />
+        <Route path="/vendorstore" element={< VendorStore/>} />
       </Routes>
     </>
   );

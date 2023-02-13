@@ -312,7 +312,7 @@ function Header() {
                                                 <a href="/categorylist">Categories </a>
                                             </li>
                                             <li>
-                                                <a href="/supplier-list">Stores</a>
+                                                <a href="/vendorstore">Stores</a>
                                             </li>
                                             <li>
                                                 <a href="/blog">Blog</a>
