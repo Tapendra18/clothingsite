@@ -6,8 +6,18 @@ import Header from '../header/Header';
 const CategoryList = () => {
 
     const [data, setData] = useState();
-    const API_URL = "http://127.0.0.1:8000/"
+    const [women, setwomen] = useState();
 
+
+    const API_URL = "http://127.0.0.1:8000/"
+    const API_URL2 = "http://127.0.0.1:8000/"
+
+
+    const womenusers = () => {
+        axios.get("http://127.0.0.1:8000/api/v1/women")
+            .then(response => setwomen(response))
+            .catch(err => console.log(err));
+    }
 
     const getusers = () => {
         axios.get("http://127.0.0.1:8000/api/v1/mens")
@@ -17,6 +27,7 @@ const CategoryList = () => {
 
     useEffect(() => {
         getusers();
+        womenusers();
     }, []);
     return (
         <>
@@ -48,7 +59,7 @@ const CategoryList = () => {
                                         {data && data.data.data.map((item) => (
                                             <article className="row align-items-center hover-up">
                                                 <figure className="col-md-4 mb-0">
-                                                    <a href="/shop/main/custard-apple"><img  src={`${API_URL + item.image}`} alt=" Custard apple" /></a>
+                                                    <a href="/shop/main/custard-apple"><img src={`${API_URL + item.image}`} alt=" Custard apple" /></a>
                                                 </figure>
                                                 <div className="col-md-8 mb-0">
                                                     <h6>
@@ -62,16 +73,19 @@ const CategoryList = () => {
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
                                     <a href="/shop/super/beauty-fragrances"><h4 className="section-title style-1 mb-30 animated animated">Women</h4></a>
                                     <div className="product-list-small animated animated">
-                                        <article className="row align-items-center hover-up">
-                                            <figure className="col-md-4 mb-0">
-                                                <a href="/shop/main/makeup"><img src="media/categories/main/imgs/5060346f5bb533952f5b493fce8ef8d6.webp " alt=" Makeup" /></a>
-                                            </figure>
-                                            <div className="col-md-8 mb-0">
-                                                <h6>
-                                                    <a href="/shop/main/makeup"> kurties</a>
-                                                </h6>
-                                            </div>
-                                        </article>
+                                        {women && women.data.data.map((item) => (
+                                            <article className="row align-items-center hover-up">
+                                                <figure className="col-md-4 mb-0">
+                                                    <a href="/shop/main/makeup"><img src={`${API_URL2 + item.image}`} alt=" Makeup" /></a>
+                                                </figure>
+                                                <div className="col-md-8 mb-0">
+                                                    <h6>
+                                                        <a href="/shop/main/makeup"> {item.title}</a>
+                                                    </h6>
+                                                </div>
+                                            </article>
+                                        ))}
+
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
