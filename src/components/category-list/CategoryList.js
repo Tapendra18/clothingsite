@@ -88,7 +88,7 @@ const CategoryList = () => {
                                                 </figure>
                                                 <div className="col-md-8 mb-0">
                                                     <h6>
-                                                        <a href={item.slug}> {item.title}</a>
+                                                        <a href={`${"/categoryitem"+item.slug}`}> {item.title}</a>
                                                     </h6>
                                                 </div>
                                             </article>

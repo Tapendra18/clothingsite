@@ -49,7 +49,7 @@ function App() {
         <Route path="/productdetail" element={<ProductDetail />} />
         <Route path="/categorylist/:slug" element={<CategoryList />} />
         <Route path="/vendorstore" element={< VendorStore />} />
-        <Route path="/categoryitem" element={< CategoryItem />} />
+        <Route path="/categoryitemshirt-s" element={< CategoryItem />} />
       </Routes>
     </>
   );
