@@ -22,6 +22,8 @@ import Health from "./components/health-personal-care/Health";
 import ProductDetail from "./components/productDetail/ProductDetail";
 import VendorStore from "./components/vendorStore/VendorStore";
 import CategoryItem from "./components/categoryitem/CategoryItem";
+import Womentshirt from "./components/categoryitem/Womentshirt";
+
 
 function App() {
   return (
@@ -50,6 +52,7 @@ function App() {
         <Route path="/categorylist/:slug" element={<CategoryList />} />
         <Route path="/vendorstore" element={< VendorStore />} />
         <Route path="/categoryitemshirt-s" element={< CategoryItem />} />
+        <Route path="/categoryitemwomen-t-shirt-s" element={< Womentshirt />} />
       </Routes>
     </>
   );
