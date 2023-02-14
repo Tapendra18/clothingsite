@@ -10,19 +10,18 @@ const CategoryList = () => {
     const [kid, setKid] = useState();
 
 
-
     const API_URL = "http://127.0.0.1:8000/"
     const API_URL2 = "http://127.0.0.1:8000/"
 
 
     const kidusers = () => {
-        axios.get("http://127.0.0.1:8000/api/v1/kid")
+        axios.get("http://127.0.0.1:8000/api/v1/kid/:slug")
             .then(response => setKid(response))
             .catch(err => console.log(err))
     }
 
     const womenusers = () => {
-        axios.get("http://127.0.0.1:8000/api/v1/women")
+        axios.get("http://127.0.0.1:8000/api/v1/women/:slug")
             .then(response => setwomen(response))
             .catch(err => console.log(err));
     }
@@ -68,7 +67,7 @@ const CategoryList = () => {
                                         {data && data.data.data.map((item) => (
                                             <article className="row align-items-center hover-up">
                                                 <figure className="col-md-4 mb-0">
-                                                    <a href="/shop/main/custard-apple"><img src={`${API_URL + item.image}`} alt=" Custard apple" /></a>
+                                                    <a href=""><img src={`${API_URL + item.image}`} alt=" Custard apple" /></a>
                                                 </figure>
                                                 <div className="col-md-8 mb-0">
                                                     <h6>
@@ -89,7 +88,7 @@ const CategoryList = () => {
                                                 </figure>
                                                 <div className="col-md-8 mb-0">
                                                     <h6>
-                                                        <a href="/shop/main/makeup"> {item.title}</a>
+                                                        <a href={item.slug}> {item.title}</a>
                                                     </h6>
                                                 </div>
                                             </article>

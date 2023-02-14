@@ -21,6 +21,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Health from "./components/health-personal-care/Health";
 import ProductDetail from "./components/productDetail/ProductDetail";
 import VendorStore from "./components/vendorStore/VendorStore";
+import CategoryItem from "./components/categoryitem/CategoryItem";
 
 function App() {
   return (
@@ -46,8 +47,9 @@ function App() {
         <Route path="/health" element={<Health />} />
         <Route path="/categorylist" element={<CategoryList />} />
         <Route path="/productdetail" element={<ProductDetail />} />
-        <Route path="/categorylist" element={<CategoryList />} />
-        <Route path="/vendorstore" element={< VendorStore/>} />
+        <Route path="/categorylist/:slug" element={<CategoryList />} />
+        <Route path="/vendorstore" element={< VendorStore />} />
+        <Route path="/categoryitem" element={< CategoryItem />} />
       </Routes>
     </>
   );

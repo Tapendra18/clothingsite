@@ -43,7 +43,6 @@ function Products(props) {
                 </div>
 
                 <div className="tab-content" id="myTabContent">
-
                     <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div className="row product-grid-4">
                             {data && data.data.data.map((item) => (
