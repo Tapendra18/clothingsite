@@ -148,7 +148,8 @@ function HomeSlider() {
                                             <h4 className="mb-30">
                                                {item.title}
                                             </h4>
-                                            <a href= {`/productdetail/${item.slug}`}className="btn btn-xs mb-50">Shop Now <i
+                                            {/* <a href= {`/productdetail/${item.slug}`}className="btn btn-xs mb-50">Shop Now <i */}
+                                            <a href= "/productdetail"className="btn btn-xs mb-50">Shop Now <i
                                                 className="fi-rs-arrow-small-right"></i></a>
                                         </div>
                                     </div>

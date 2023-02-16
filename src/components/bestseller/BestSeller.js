@@ -46,6 +46,7 @@ function BestSeller() {
   };
 
   const [data, setData] = useState();
+  const [item, setitem] = useState();
   const API_URL = "http://127.0.0.1:8000/"
 
   const getusers = () => {
@@ -54,91 +55,42 @@ function BestSeller() {
       .catch(err => console.log(err))
   }
 
-  useEffect(()=>{
+  const supplierusers = () => {
+    axios.get("http://127.0.0.1:8000/api/v1/supplier")
+      .then(response => setitem(response))
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
     getusers();
-  } ,[]);
+    supplierusers();
+  }, []);
 
   return (
     <>
       <section className="section-padding">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3 col-md-6">
-              <div
-                className="banner-img style-6 wow animate__animated animate__fadeInUp"
-                data-wow-delay=".1s"
-              >
-                <img src="media/ads/suppliers/banner-17.png" alt="" />
-                <div className="banner-text">
-                  <a href="product-details.html">
-                    <h6 className="mb-10 mt-30">
-                      100% guaranteed
-                      <br /> all Fresh items
-                    </h6>
-                  </a>
-                  <a href="product-details.html">
-                    <p>Go to supplier</p>
-                  </a>
+            {item && item.data.data.map((data) => (
+              <div className="col-lg-3 col-md-6" key={data.slug} >
+                <div
+                  className="banner-img style-6 wow animate__animated animate__fadeInUp"
+                  data-wow-delay=".1s"
+                >
+                  <img style={{ width: "400px", height: "180px" }} src={`${API_URL + data.image}`} alt="" />
+                  <div className="banner-text">
+                    <a href="product-details.html">
+                      <h6 className="mb-10 mt-30">
+                        {data.title}
+                      </h6>
+                    </a>
+                    <a href="product-details.html">
+                      <p>Go to supplier</p>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div
-                className="banner-img style-6 wow animate__animated animate__fadeInUp"
-                data-wow-delay=".2s"
-              >
-                <img src="media/ads/suppliers/banner-19.png" alt="" />
-                <div className="banner-text">
-                  <a href="product-details.html">
-                    <h6 className="mb-10 mt-30">
-                      Enjoy 15% OFF f<br />
-                      or all vegetable
-                    </h6>
-                  </a>
-                  <a href="product-details.html">
-                    <p>Go to supplier</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div
-                className="banner-img style-6 wow animate__animated animate__fadeInUp"
-                data-wow-delay=".3s"
-              >
-                <img src="media/ads/suppliers/banner-16.png" alt="" />
-                <div className="banner-text">
-                  <a href="product-details.html">
-                    <h6 className="mb-10 mt-30">
-                      Everyday Fresh <br />
-                      with Our Products
-                    </h6>
-                  </a>
-                  <a href="product-details.html">
-                    <p>Go to supplier</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div
-                className="banner-img style-6 wow animate__animated animate__fadeInUp"
-                data-wow-delay=".4s"
-              >
-                <img src="media/ads/suppliers/banner-18.png" alt="" />
-                <div className="banner-text">
-                  <a href="product-details.html">
-                    <h6 className="mb-10 mt-30">
-                      Special grocery
-                      <br /> sale off this month
-                    </h6>
-                  </a>
-                  <a href="product-details.html">
-                    <p>Go to supplier</p>
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -203,7 +155,7 @@ function BestSeller() {
                     <div className="product-content-wrap">
                       <div className="product-category">
                         <a href="/shop/super/food-beverage">
-                         {item.title}
+                          {item.title}
                         </a>
                       </div>
                       <h2>

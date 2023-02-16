@@ -106,7 +106,7 @@ function PopularCategory() {
                 }}
               >
                 <figure className="img-hover-scale overflow-hidden">
-                  <a href="/shop/main/household-supplies">
+                  <a href="/productdetail">
                     <img
                       src={`${API_URL + datas.image}`}
                       width="80"
@@ -116,7 +116,7 @@ function PopularCategory() {
                   </a>
                 </figure>
                 <h6>
-                  <a href="/shop/main/household-supplies">{datas.title}</a>
+                  <a href="/productdetail">{datas.title}</a>
                 </h6>
               </div>
             ))}

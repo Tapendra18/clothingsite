@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const ProductDetail = () => {
     const { slug } = useParams();
+    
     return (
         <>
             <Header />
@@ -48,7 +49,7 @@ const ProductDetail = () => {
                                             </div>
                                             <div className="col-md-6 col-sm-12 col-xs-12">
                                                 <div className="detail-info pr-30 pl-30">
-                                                    <h3 className="title-detail">{slug.title}</h3>
+                                                    <h3 className="title-detail">{slug}</h3>
                                                     <div className="product-detail-rating">
                                                         <div className="product-rate-cover text-end">
                                                             <div className="product-rate d-inline-block">
@@ -67,7 +68,7 @@ const ProductDetail = () => {
                                                         </div>
                                                     </div>
                                                     <div className="short-desc mb-30">
-                                                        <p className="font-lg"><p>Haagen-Dazs Caramel Cone Ice Cream Ketchup</p>.</p>
+                                                        <p className="font-lg"><p>{slug}</p>.</p>
                                                     </div>
                                                     <div className="detail-extralink mb-50">
                                                         <div className="detail-qty border radius">
@@ -265,7 +266,7 @@ const ProductDetail = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="product-content-wrap">
-                                                                <h2><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" >{slug.title}</a></h2>
+                                                                <h2><a href="/product-details/haagen-dazs-caramel-cone-ice-cream-ketchup" >{slug}</a></h2>
                                                                 <div className="rating-result" title="0%">
                                                                     <span> </span>
                                                                 </div>

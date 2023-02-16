@@ -66,9 +66,9 @@ function Products(props) {
                                         </div>
                                         <div className="product-content-wrap">
                                             <div className="product-category">
-                                                <a href="/shop/super/food-beverage">{item.title} </a>
+                                                <a href="/productdetail">{item.title} </a>
                                             </div>
-                                            <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">{item.subtitle}</a>
+                                            <a href="/productdetail">{item.subtitle}</a>
                                             <div className="product-rate-cover">
                                                 <div className="product-rate d-inline-block">
                                                     <div className="product-rating" style={{ width: '50%' }}></div>
