@@ -5,38 +5,38 @@ import Header from '../header/Header';
 
 const CategoryList = () => {
 
-    const [data, setData] = useState();
-    const [women, setwomen] = useState();
-    const [kid, setKid] = useState();
+    // const [data, setData] = useState();
+    // const [women, setwomen] = useState();
+    // const [kid, setKid] = useState();
 
 
-    const API_URL = "http://127.0.0.1:8000/"
-    const API_URL2 = "http://127.0.0.1:8000/"
+    // const API_URL = "http://127.0.0.1:8000/"
+    // const API_URL2 = "http://127.0.0.1:8000/"
 
 
-    const kidusers = () => {
-        axios.get("http://127.0.0.1:8000/api/v1/kid/:slug")
-            .then(response => setKid(response))
-            .catch(err => console.log(err))
-    }
+    // const kidusers = () => {
+    //     axios.get("http://127.0.0.1:8000/api/v1/kid/:slug")
+    //         .then(response => setKid(response))
+    //         .catch(err => console.log(err))
+    // }
 
-    const womenusers = () => {
-        axios.get("http://127.0.0.1:8000/api/v1/women/:slug")
-            .then(response => setwomen(response))
-            .catch(err => console.log(err));
-    }
+    // const womenusers = () => {
+    //     axios.get("http://127.0.0.1:8000/api/v1/women/:slug")
+    //         .then(response => setwomen(response))
+    //         .catch(err => console.log(err));
+    // }
 
-    const getusers = () => {
-        axios.get("http://127.0.0.1:8000/api/v1/mens")
-            .then(response => setData(response))
-            .catch(err => console.log(err));
-    }
+    // const getusers = () => {
+    //     axios.get("http://127.0.0.1:8000/api/v1/mens")
+    //         .then(response => setData(response))
+    //         .catch(err => console.log(err));
+    // }
 
-    useEffect(() => {
-        getusers();
-        womenusers();
-        kidusers();
-    }, []);
+    // useEffect(() => {
+    //     getusers();
+    //     womenusers();
+    //     kidusers();
+    // }, []);
     return (
         <>
             <Header />
@@ -64,53 +64,53 @@ const CategoryList = () => {
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
                                     <a href="/shop/super/food-beverage"><h4 className="section-title style-1 mb-30 animated animated">men's clothing</h4></a>
                                     <div className="product-list-small animated animated">
-                                        {data && data.data.data.map((item) => (
+                                        {/* {data && data.data.data.map((item) => ( */}
                                             <article className="row align-items-center hover-up">
                                                 <figure className="col-md-4 mb-0">
-                                                    <a href=""><img src={`${API_URL + item.image}`} alt=" Custard apple" /></a>
+                                                    <a href=""><img  alt=" Custard apple" />ertr</a>
                                                 </figure>
                                                 <div className="col-md-8 mb-0">
                                                     <h6>
-                                                        <a href="/shop/main/custard-apple">{item.title}</a>
+                                                        <a href="/shop/main/custard-apple">fdfgfg</a>
                                                     </h6>
                                                 </div>
                                             </article>
-                                        ))}
+                                        {/* ))} */}
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
                                     <a href="/shop/super/beauty-fragrances"><h4 className="section-title style-1 mb-30 animated animated">Women</h4></a>
                                     <div className="product-list-small animated animated">
-                                        {women && women.data.data.map((item) => (
+                                        {/* {women && women.data.data.map((item) => ( */}
                                             <article className="row align-items-center hover-up">
                                                 <figure className="col-md-4 mb-0">
-                                                    <a href="/shop/main/makeup"><img src={`${API_URL2 + item.image}`} alt=" Makeup" /></a>
+                                                    <a href="/shop/main/makeup"><img  alt=" Makeup" /></a>
                                                 </figure>
                                                 <div className="col-md-8 mb-0">
                                                     <h6>
-                                                        <a href={`${"/categoryitem"+item.slug}`}> {item.title}</a>
+                                                        <a > fghhg</a>
                                                     </h6>
                                                 </div>
                                             </article>
-                                        ))}
+                                        {/* ))} */}
 
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
                                     <a href="/shop/super/consumer-electronics"><h4 className="section-title style-1 mb-30 animated animated">Kid's</h4></a>
                                     <div className="product-list-small animated animated">
-                                        {kid && kid.data.data.map((item) => (
+                                        {/* {kid && kid.data.data.map((item) => ( */}
                                             <article className="row align-items-center hover-up">
                                                 <figure className="col-md-4 mb-0">
-                                                    <a href="/shop/main/mobile-phones-tablets"><img src={`${API_URL2 + item.image}`} alt=" Mobile Phones &amp; Tablets" /></a>
+                                                    <a href="/shop/main/mobile-phones-tablets"><img src alt=" Mobile Phones &amp; Tablets" /></a>
                                                 </figure>
                                                 <div className="col-md-8 mb-0">
                                                     <h6>
-                                                        <a href="/shop/main/mobile-phones-tablets"> {item.title}</a>
+                                                        <a href> ghfhn</a>
                                                     </h6>
                                                 </div>
                                             </article>
-                                        ))}
+                                        {/* ))} */}
 
                                     </div>
                                 </div>

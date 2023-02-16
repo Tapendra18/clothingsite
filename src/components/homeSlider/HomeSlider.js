@@ -18,6 +18,8 @@ function HomeSlider() {
     };
 
     const [data, setData] = useState();
+    const [sidebar, setsideBar] = useState();
+
     const API_URL = "http://127.0.0.1:8000/";
 
     const getusers = () => {
@@ -26,8 +28,15 @@ function HomeSlider() {
             .catch(err => console.log(err))
     }
 
+    const sidebars = () => {
+        axios.get("http://127.0.0.1:8000/api/v1/homesidebar")
+            .then(response => setsideBar(response))
+            .catch(err => console.log(err))
+    }
+
     useEffect(() => {
         getusers();
+        sidebars()
     }, []);
 
     return (
@@ -116,7 +125,7 @@ function HomeSlider() {
                                             <img src={`${API_URL + item.image}`} />
                                             <div className="slider-content">
                                                 <a href="product-details.html" style={{ zIndex: "98988" }}>
-                                                    <h1 className="display-2 mb-40" style={{ color: "white" }}>
+                                                    <h1 className="display-2 mb-40" style={{ color: "white"}}>
                                                         {item.title}
                                                     </h1>
                                                 </a>
@@ -131,20 +140,22 @@ function HomeSlider() {
                     </div>
                     <div className="col-lg-3">
                         <div className="row">
-                            <div className="col-md-6 col-lg-12">
-                                <div className="banner-img style-4 mt-30">
-                                    <img src="media/ads/sidebar/banner-14_NHnALKO.png" alt="" />
-                                    <div className="banner-text">
-                                        <h4 className="mb-30">
-                                            Wear &amp; <br />
-                                            With Offer's
-                                        </h4>
-                                        <a href="product-details.html" className="btn btn-xs mb-50">Shop Now <i
-                                            className="fi-rs-arrow-small-right"></i></a>
+                            {sidebar && sidebar.data.data.map((item) => (
+                                <div className="col-md-6 col-lg-12" key={item.slug}>
+                                    <div className="banner-img style-4 mt-30">
+                                        <img style={{height:"300px" ,width:"350px"}} src={`${API_URL + item.image}`} alt="" />
+                                        <div className="banner-text">
+                                            <h4 className="mb-30">
+                                               {item.title}
+                                            </h4>
+                                            <a href= {`/productdetail/${item.slug}`}className="btn btn-xs mb-50">Shop Now <i
+                                                className="fi-rs-arrow-small-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col-md-6 col-lg-12">
+                            ))}
+
+                            {/* <div className="col-md-6 col-lg-12">
                                 <div className="banner-img style-5 mt-5 mt-md-30">
                                     <img src="media/ads/sidebar/banner-15_wiwgjI6.png" alt="" />
                                     <div className="banner-text">
@@ -156,7 +167,7 @@ function HomeSlider() {
                                             className="fi-rs-arrow-small-right"></i></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

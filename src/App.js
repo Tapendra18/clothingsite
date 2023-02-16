@@ -23,6 +23,7 @@ import ProductDetail from "./components/productDetail/ProductDetail";
 import VendorStore from "./components/vendorStore/VendorStore";
 import CategoryItem from "./components/categoryitem/CategoryItem";
 import Womentshirt from "./components/categoryitem/Womentshirt";
+import Kidtshirt from "./components/categoryitem/Kidtshirt";
 
 
 function App() {
@@ -48,11 +49,12 @@ function App() {
         <Route path="/furniture" element={<HomeFurniture />} />
         <Route path="/health" element={<Health />} />
         <Route path="/categorylist" element={<CategoryList />} />
-        <Route path="/productdetail" element={<ProductDetail />} />
+        <Route path="/productdetail/:slug" element={<ProductDetail />} />
         <Route path="/categorylist/:slug" element={<CategoryList />} />
         <Route path="/vendorstore" element={< VendorStore />} />
-        <Route path="/categoryitemshirt-s" element={< CategoryItem />} />
+        <Route path="/category/:slug" element={< CategoryItem />} />
         <Route path="/categoryitemwomen-t-shirt-s" element={< Womentshirt />} />
+        <Route path="/categoryitemt-shirt" element={< Kidtshirt />} />
       </Routes>
     </>
   );
