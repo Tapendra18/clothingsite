@@ -6,11 +6,11 @@ import { toggleCart } from '../../store/slices/cartSlice';
 
 function Header() {
 
-    const {cartItems} = useSelector((state)=> state.cart);
+    const { cartItems } = useSelector((state) => state.cart);
 
     const dispatch = useDispatch();
 
-    const handleOpenCart = (open) =>{
+    const handleOpenCart = (open) => {
         dispatch(toggleCart(open));
     }
 
@@ -20,7 +20,7 @@ function Header() {
         <>
             <header className="header-area header-style-1 header-style-5 header-height-2">
                 <div className="mobile-promotion">
-                    <span>You will get 25% discount <a className="active d-inline-block" style={{Color:'#090101'}}
+                    <span>You will get 25% discount <a className="active d-inline-block" style={{ Color: '#090101' }}
                         href="product-details.html">Shop now</a></span>
                 </div>
                 <div className="header-top header-top-ptb-1 d-none d-lg-block">
@@ -38,9 +38,9 @@ function Header() {
                             <div className="col-xl-6 col-lg-4">
                                 <div className="text-center">
                                     <div id="news-flash" className="d-inline-block"
-                                        style={{overflow: 'hidden', position: 'relative', height: '15px'}}>
-                                        <ul style={{position: 'absolute', margin: '0px', padding: '0px', top: '0px'}}>
-                                            <li style={{margin: '0px', padding: '0px', height: '15px'}}>
+                                        style={{ overflow: 'hidden', position: 'relative', height: '15px' }}>
+                                        <ul style={{ position: 'absolute', margin: '0px', padding: '0px', top: '0px' }}>
+                                            <li style={{ margin: '0px', padding: '0px', height: '15px' }}>
                                                 <i className="fi-rs-bell d-inline-block mr-5"></i>
                                                 <span className="d-inline-block">
                                                     <b className="text-success"> Ads</b> You will get 25% discount</span>
@@ -54,7 +54,7 @@ function Header() {
                                 <div className="header-info header-info-right">
                                     <ul>
                                         <li>Need help? Call Us: <strong className="text-brand"> + 1800 900</strong></li>
-                                        <form action="/set_currency/" method="post" style={{marginRight: '10px'}}>
+                                        <form action="/set_currency/" method="post" style={{ marginRight: '10px' }}>
                                             <input type="hidden" name="csrfmiddlewaretoken"
                                                 defaultValue="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
                                             <select name="currency">
@@ -109,9 +109,9 @@ function Header() {
                                 <div className="header-action-right">
                                     <div className="header-action-2">
                                         <div className="header-action-icon-2">
-                                            <a className="mini-cart-icon" href="/cart" 
-                                                onClick={()=> handleOpenCart(true)}
-                                                >
+                                            <a className="mini-cart-icon" href="/cart"
+                                                onClick={() => handleOpenCart(true)}
+                                            >
                                                 <img alt="Nest" src="static/assets/imgs/theme/icons/icon-cart.svg" />
                                                 <span className="pro-count blue">{cartQuantity}</span>
                                             </a>
@@ -222,12 +222,12 @@ function Header() {
                                                     <li><a href="/home-4/">Home 4</a></li>
                                                 </ul> */}
                                             </li>
-                                            <li className="position-static hot-deals">
+                                            {/* <li className="position-static hot-deals">
                                                 <img src="static/assets/imgs/theme/icons/icon-hot-white.svg"
                                                     alt="hot deals" /><a href="shop.html">Shop <i
                                                         className="fi-rs-angle-down"></i></a>
                                                 <ul className="mega-menu">
-                                                    <li className="sub-mega-menu" style={{width: '33%'}}>
+                                                    <li className="sub-mega-menu" style={{ width: '33%' }}>
                                                         <div className="menu-banner-wrap">
                                                             <a href="product-details.html">
                                                                 <img src="media/ads/hot-deal-ad/banner-menu_UgjJTIO_6KQjjyu.png"
@@ -253,7 +253,7 @@ function Header() {
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mega-menu" style={{width: '33%'}}>
+                                                    <li className="sub-mega-menu" style={{ width: '33%' }}>
                                                         <div className="menu-banner-wrap">
                                                             <a href="product-details.html">
                                                                 <img src="media/ads/hot-deal-ad/banner-menu_khJ9a6v.png"
@@ -279,7 +279,7 @@ function Header() {
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <li className="sub-mega-menu" style={{width: "33%"}}>
+                                                    <li className="sub-mega-menu" style={{ width: "33%" }}>
                                                         <div className="menu-banner-wrap">
                                                             <a href="product-details.html">
                                                                 <img src="media/ads/hot-deal-ad/banner-menu_UgjJTIO.png"
@@ -306,7 +306,7 @@ function Header() {
                                                         </div>
                                                     </li>
                                                 </ul>
-                                            </li>
+                                            </li> */}
 
                                             <li className="position-static">
                                                 <a href="/categorylist">Categories </a>
@@ -383,11 +383,11 @@ function Header() {
                                     <li className="menu-item-has-children"><span className="menu-expand"><i
                                         className="fi-rs-angle-small-down"></i></span>
                                         <a href="index.html">Home</a>
-                                        <ul className="dropdown" style={{display: 'none'}}>
-                                            <li><a href="index.html">Home 1</a></li>
+                                        <ul className="dropdown" style={{ display: 'none' }}>
+                                            {/* <li><a href="index.html">Home 1</a></li>
                                             <li><a href="/home-2/">Home 2</a></li>
                                             <li><a href="/home-3/">Home 3</a></li>
-                                            <li><a href="/home-4/">Home 4</a></li>
+                                            <li><a href="/home-4/">Home 4</a></li> */}
                                         </ul>
                                     </li>
                                     <li className="menu-item-has-children">
