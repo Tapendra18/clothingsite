@@ -49,7 +49,7 @@ const ProductDetail = () => {
                                             </div>
                                             <div className="col-md-6 col-sm-12 col-xs-12">
                                                 <div className="detail-info pr-30 pl-30">
-                                                    <h3 className="title-detail">{slug}</h3>
+                                                    <h3 className="title-detail">supraaa</h3>
                                                     <div className="product-detail-rating">
                                                         <div className="product-rate-cover text-end">
                                                             <div className="product-rate d-inline-block">
@@ -68,7 +68,7 @@ const ProductDetail = () => {
                                                         </div>
                                                     </div>
                                                     <div className="short-desc mb-30">
-                                                        <p className="font-lg"><p>{slug}</p>.</p>
+                                                        <p className="font-lg"><p>toyota</p>.</p>
                                                     </div>
                                                     <div className="detail-extralink mb-50">
                                                         <div className="detail-qty border radius">

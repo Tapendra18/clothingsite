@@ -58,9 +58,9 @@ function Header() {
                                             <input type="hidden" name="csrfmiddlewaretoken"
                                                 defaultValue="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
                                             <select name="currency">
-                                                <option value="EUR">
-                                                    €
-                                                    EUR
+                                                <option value="RUPEE">
+                                                    ₹
+                                                    RUP
                                                 </option>
                                                 <option value="USD">
                                                     $
