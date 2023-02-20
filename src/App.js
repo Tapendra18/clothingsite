@@ -24,6 +24,7 @@ import VendorStore from "./components/vendorStore/VendorStore";
 import CategoryItem from "./components/categoryitem/CategoryItem";
 import Womentshirt from "./components/categoryitem/Womentshirt";
 import Kidtshirt from "./components/categoryitem/Kidtshirt";
+import ProductSearch from "./components/ProductSearch/ProductSearch";
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
         <Route path="/category/:slug" element={< CategoryItem />} />
         <Route path="/categoryitemwomen-t-shirt-s" element={< Womentshirt />} />
         <Route path="/categoryitemt-shirt" element={< Kidtshirt />} />
+        <Route path="/productsearch" element={< ProductSearch />} />
       </Routes>
     </>
   );

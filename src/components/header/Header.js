@@ -82,7 +82,7 @@ function Header() {
                             </div>
                             <div className="header-right">
                                 <div className="search-style-2">
-                                    <form action="product-search/" method="post">
+                                    <form action="productsearch" method="post">
                                         <input type="hidden" name="csrfmiddlewaretoken"
                                             value="ybcHhIxigLu3GxPKry6eKHTWkWAMYiw0LEuKuoBalMF1AYpnFCl2ryWAjqfZI8AP" />
                                         <select name="category-select" className="select-active  category-search"
@@ -214,13 +214,7 @@ function Header() {
                                     <nav>
                                         <ul>
                                             <li>
-                                                <a className="active" href="/">Home <i className="fi-rs-angle-down"></i></a>
-                                                {/* <ul className="sub-menu">
-                                                    <li><a href="index.html">Home 1</a></li>
-                                                    <li><a href="home-2.html">Home 2</a></li>
-                                                    <li><a href="/home-3/">Home 3</a></li>
-                                                    <li><a href="/home-4/">Home 4</a></li>
-                                                </ul> */}
+                                                <a className="active" href="/">Home</a>  
                                             </li>
                                             {/* <li className="position-static hot-deals">
                                                 <img src="static/assets/imgs/theme/icons/icon-hot-white.svg"
