@@ -10,28 +10,10 @@ import { getUserAsync } from '../../store/slices/LoginSlice';
 const Login = () => {
 
     const dispatch = useDispatch();
-    // const navigate= useNavigate();
-
-    // const { error, userData } = useSelector(
-    //     (state) => state.users
-    // );
-
-    // useEffect(()=>{
-
-    //     if(userData){
-    //         console.log(userData, 'loginDone');
-    //         localStorage.setItem('loginUser', JSON.stringify(userData));
-    //         localStorage.setItem('token', userData.token);
-    //         // navigate("/dashboard");
-    //     }
-    // },[userData])
-    // console.log(error, 'errrorororo');
-
     const [data, setData] = useState({
         email: "",
         password: ""
     });
-    console.log(data);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
