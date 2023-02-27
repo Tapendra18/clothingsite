@@ -53,11 +53,11 @@ const CategoryList = () => {
                         <div className="col-lg-4-5">
                             <div className="row product-grid">
                                 {data && data.data.data.map((item) => (
-                                    <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0">
+                                    <div className="col-xl-3 col-lg-4 col-md-6 mb-sm-5 mb-md-0 wow animate__animated animate__fadeInUp  mb-60" data-wow-delay="0" key={data.id}>
                                         <a href="/shop/super/food-beverage"><h4 className="section-title style-1 mb-30 animated animated">{item.title}</h4></a>
                                         <div className="product-list-small animated animated">
                                             {subcategories && subcategories.data.data.map((data) => (
-                                                <article className="row align-items-center hover-up">
+                                                <article className="row align-items-center hover-up" key={data.id}>
                                                     <figure className="col-md-4 mb-0">
                                                         <a href=""><img src={`${API_URL + data.thumbnail}`} alt=" Custard apple" /></a>
                                                     </figure>
