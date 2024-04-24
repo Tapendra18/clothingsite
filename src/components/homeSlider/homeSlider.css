@@ -19,3 +19,15 @@ a{
 .hero-slider-1 .slick-dots li button:before {
     content: '' !important;
 }
+
+.slick-track{
+    height: 375px !important;
+}
+
+.hero-slider-1 .slider-content {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

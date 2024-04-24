@@ -94,7 +94,7 @@ function BestSeller() {
           </div>
         </div>
       </section>
-
+{/* 
       <section className="section-padding pb-5">
         <div className="container">
           <div className="section-title wow animate__animated animate__fadeIn">
@@ -184,7 +184,7 @@ function BestSeller() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

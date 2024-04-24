@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
+
 function HomeSlider() {
 
     const settings = {
@@ -14,7 +15,7 @@ function HomeSlider() {
         slidesToScroll: 1,
         dots: true,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 200000,
     };
 
     const [data, setData] = useState();
@@ -43,7 +44,7 @@ function HomeSlider() {
         <section className="home-slider position-relative mb-30">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-2 d-none d-lg-flex">
+                    {/* <div className="col-lg-2 d-none d-lg-flex">
                         <div className="categories-dropdown-wrap style-2 font-heading mt-30">
                             <div className="d-flex categori-dropdown-inner">
                                 <ul>
@@ -113,19 +114,22 @@ function HomeSlider() {
                             <div className="more_categories"><span className="icon"></span> <span className="heading-sm-1">Show
                                 more...</span></div>
                         </div>
-                    </div>
-                    <div className="col-lg-7">
+                    </div> */}
+                    <div className="col-12">
                         <div className="home-slide-cover mt-30">
 
                             <div className="hero-slider-1 style-5 dot-style-1 dot-style-1-position-2">
                                 <Slider {...settings}>
                                     {data && data.data.data.map((item) => (
                                         <div className="single-hero-slider single-animation-wrap"
-                                            style={{ position: 'relative' }}>
-                                            <img src={`${API_URL + item.image}`} />
+                                            style={{ position: 'relative' }}
+                                            >
+                                            <img style={{
+                                                width:"100%",
+                                            }} src={`${API_URL + item.image}`} />
                                             <div className="slider-content">
-                                                <a href="product-details.html" style={{ zIndex: "98988" }}>
-                                                    <h1 className="display-2 mb-40" style={{ color: "white"}}>
+                                                <a style={{ zIndex: "98988" }}>
+                                                    <h1 className="display-2 " >
                                                         {item.title}
                                                     </h1>
                                                 </a>
@@ -138,7 +142,7 @@ function HomeSlider() {
                             <div className="slider-arrow hero-slider-1-arrow"></div>
                         </div>
                     </div>
-                    <div className="col-lg-3">
+                    {/* <div className="col-lg-3">
                         <div className="row">
                             {sidebar && sidebar.data.data.map((item) => (
                                 <div className="col-md-6 col-lg-12" key={item.slug}>
@@ -148,29 +152,14 @@ function HomeSlider() {
                                             <h4 className="mb-30">
                                                {item.title}
                                             </h4>
-                                            {/* <a href= {`/productdetail/${item.slug}`}className="btn btn-xs mb-50">Shop Now <i */}
                                             <a href= "/productdetail"className="btn btn-xs mb-50">Shop Now <i
                                                 className="fi-rs-arrow-small-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             ))}
-
-                            {/* <div className="col-md-6 col-lg-12">
-                                <div className="banner-img style-5 mt-5 mt-md-30">
-                                    <img src="media/ads/sidebar/banner-15_wiwgjI6.png" alt="" />
-                                    <div className="banner-text">
-                                        <h5 className="mb-20">
-                                            Products  <br />
-                                            On Sale
-                                        </h5>
-                                        <a href="product-details.html" className="btn btn-xs">Shop Now <i
-                                            className="fi-rs-arrow-small-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> */}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section >

@@ -4,6 +4,7 @@ import axios from "axios";
 function DayDeal() {
 
     const [data, setData] = useState();
+    console.log(data , "daydealsData");
     const [item, setItem] = useState();
     const API_URL = "http://127.0.0.1:8000/";
     const API_URL2 = "http://127.0.0.1:8000/";
@@ -14,8 +15,8 @@ function DayDeal() {
             .catch(err => console.log(err))
     }
 
-    const getusers = () => {
-        axios.get("http://127.0.0.1:8000/api/v1/daydeal")
+    const getusers = async () => {
+     await axios.get("http://127.0.0.1:8000/api/v1/daydeal")
             .then(response => setData(response))
             .catch(err => console.log(err))
     }
@@ -37,7 +38,7 @@ function DayDeal() {
                     </div>
 
                     <div className="row">
-                        {data && data.data.data.map((item) => (
+                        {data && data?.data?.data.map((item) => (
                             <div className=" col-xl-3 col-lg-4 col-md-6">
                                 <div className="product-cart-wrap style-2 wow animate__animated animate__fadeInUp"
                                     data-wow-delay=".1s">
@@ -54,7 +55,6 @@ function DayDeal() {
                                         </div>
                                         <div className="deals-content">
                                             <h2><a href="product-details.html">{item.title}</a></h2>
-
                                             <div>
                                                 <span className="font-small text-muted">By <a
                                                     href=" /vendor-details/selem">{item.company}</a></span>

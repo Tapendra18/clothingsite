@@ -6,11 +6,12 @@ import { useDispatch } from "react-redux";
 
 function Products(props) {
     const [data, setData] = useState();
+    const [addtoCart, setAddtoCart] = useState({});
     const API_URL = "http://127.0.0.1:8000/"
 
     const getusers = () => {
         axios.get("http://127.0.0.1:8000/api/v1/bestsell")
-            .then(response => setData(response))
+            .then(response => setData(response?.data?.data))
             .catch(err => console.log(err))
     }
 
@@ -19,18 +20,25 @@ function Products(props) {
     }, []);
 
     const [added, isAdded] = useState(false);
+    console.log(added , "added")
     const dispatch = useDispatch();
     // const { img, rating, title, price } = props;
 
 
-    const handleAddToCart = () => {
-
+    const handleAddToCart = async (items) => {
+        console.log(items, "addto Cart")
         const item = {...props}
-        dispatch(additem(item));
-
-        isAdded(true);
-
+        try{
+           await dispatch(additem(item));
+           setAddtoCart(items);
+           isAdded(true);
+          
+        }catch{
+            isAdded(false);
+        }
+        console.log("ssddjdjdjdfjskfffffffffff")
         setTimeout(() => {
+        console.log("ssddjdjdjdfjskfffffffffff")
             isAdded(false);
         }, 3000);
     }
@@ -45,7 +53,7 @@ function Products(props) {
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div className="row product-grid-4">
-                            {data && data.data.data.map((item) => (
+                            {data && data?.map((item) => (
                                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 popular">
                                     <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn"
                                         data-wow-delay=".0s">
@@ -53,9 +61,9 @@ function Products(props) {
                                             <div className="product-img product-img-zoom">
                                                 <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">
                                                     <img className="default-img" src={`${API_URL + item.bestsell}`}
-                                                        alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
+                                                        alt={`${item.title}`} />
                                                     <img className="hover-img" src={`${API_URL + item.bestsell}`}
-                                                        alt="Angie’s Boomchickapop Sweet &amp; Salty Kettle Corn" />
+                                                        alt={`${item.title}`} />
                                                 </a>
                                             </div>
                                             <div className="product-action-1">
@@ -82,16 +90,16 @@ function Products(props) {
                                             <div className="product-card-bottom">
                                                 <div className="product-price">
                                                     <span>{item.price}</span>
-                                                    <span className="old-price">USD16.0</span>
+                                                    <span className="old-price">150</span>
                                                 </div>
                                                 <div className="add-cart">
                                                     <button className="add"
-                                                        onClick={handleAddToCart}
+                                                        onClick={(e)=> handleAddToCart(item)}
                                                         type="button"
                                                         key={item._id}
 
                                                     ><i
-                                                        className="fi-rs-eye mr-5"></i>{added ? 'Add to cart ' : 'view'} </button>
+                                                        className="fi-rs-eye mr-5"></i>{item?._id === addtoCart?._id ? 'Add to cart ' : 'view'} </button>
                                                 </div>
                                             </div>
                                         </div>

@@ -93,7 +93,7 @@ function PopularCategory() {
             </ul>
           </div>
 
-          <Slider {...settings}>
+       <div style={{display: "flex" , gap: "16px"}}>
             {data && data.data.data.map((datas) => (
               <div
                 className="card-2 bg-1 wow animate__animated animate__fadeInUp"
@@ -120,7 +120,8 @@ function PopularCategory() {
                 </h6>
               </div>
             ))}
-          </Slider>
+       </div>
+       
         </div>
       </div>
     </section>
