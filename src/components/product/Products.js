@@ -59,7 +59,7 @@ function Products(props) {
                                         data-wow-delay=".0s">
                                         <div className="product-img-action-wrap">
                                             <div className="product-img product-img-zoom">
-                                                <a href="/product-details/angies-boomchickapop-sweet-salty-kettle-corn">
+                                                <a href={`/productdetail/${item._id}`}>
                                                     <img className="default-img" src={`${API_URL + item.bestsell}`}
                                                         alt={`${item.title}`} />
                                                     <img className="hover-img" src={`${API_URL + item.bestsell}`}
@@ -74,9 +74,9 @@ function Products(props) {
                                         </div>
                                         <div className="product-content-wrap">
                                             <div className="product-category">
-                                                <a href="/productdetail">{item.title} </a>
+                                                <a href={`/productdetail/${item._id}`}>{item.title} </a>
                                             </div>
-                                            <a href="/productdetail">{item.subtitle}</a>
+                                            <a href={`/productdetail/${item._id}`}>{item.subtitle}</a>
                                             <div className="product-rate-cover">
                                                 <div className="product-rate d-inline-block">
                                                     <div className="product-rating" style={{ width: '50%' }}></div>

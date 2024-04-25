@@ -1,0 +1,26 @@
+.header-bottom-bg-color{
+   
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+
+
+/* .header-style-1.header-style-5 .header-bottom-bg-color {
+    background: linear-gradient(315deg, hsla(305, 57%, 74%, 1) 10%, hsla(312, 66%, 76%, 1) 30%, hsla(305, 57%, 74%, 1) 35%, hsla(305, 57%, 74%, 1) 42%, hsla(305, 57%, 74%, 1) 50%, hsla(304, 56%, 74%, 1) 57%, hsla(299, 52%, 72%, 1) 65%, hsla(279, 60%, 72%, 1) 78%, hsla(256, 73%, 71%, 1) 93%, hsla(234, 93%, 67%, 1) 100%) !important;
+} */
+
+.header-area{
+    position: sticky;
+    top: 0px;
+    z-index: 99999999999;
+}
+
+.header-scroll-bg{
+    background: linear-gradient(315deg, hsla(305, 57%, 74%, 1) 10%, hsla(312, 66%, 76%, 1) 30%, hsla(305, 57%, 74%, 1) 35%, hsla(305, 57%, 74%, 1) 42%, hsla(305, 57%, 74%, 1) 50%, hsla(304, 56%, 74%, 1) 57%, hsla(299, 52%, 72%, 1) 65%, hsla(279, 60%, 72%, 1) 78%, hsla(256, 73%, 71%, 1) 93%, hsla(234, 93%, 67%, 1) 100%) !important;
+}
+.header-style-1.header-height-2 {
+    position: sticky;
+    top: 0px;
+    z-index: 99999999999;
+}

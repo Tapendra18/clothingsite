@@ -33,6 +33,9 @@ function SamplePrevArrow(props) {
 
 
 function PopularCategory() {
+
+
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -64,7 +67,7 @@ function PopularCategory() {
         <div className="hello position-relative">
           <div className="title mb-5">
             <h3 className="d-inline me-5">Featured Categories</h3>
-            <ul className="list-inline nav nav-tabs links d-inline">
+            {/* <ul className="list-inline nav nav-tabs links d-inline">
               <li className="list-inline-item nav-item">
                 <a className="nav-link" href="/shop/super/automotive">
                   Automotive
@@ -90,11 +93,11 @@ function PopularCategory() {
                   Sports &amp; Fitness
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
 
        <div style={{display: "flex" , gap: "16px"}}>
-            {data && data.data.data.map((datas) => (
+            {data && data?.data?.data.map((datas) => (
               <div
                 className="card-2 bg-1 wow animate__animated animate__fadeInUp"
                 data-wow-delay=".1s"
@@ -106,7 +109,7 @@ function PopularCategory() {
                 }}
               >
                 <figure className="img-hover-scale overflow-hidden">
-                  <a href="/productdetail">
+                  <a href={`/productdetail/${datas._id}`}>
                     <img
                       src={`${API_URL + datas.image}`}
                       width="80"
@@ -116,7 +119,7 @@ function PopularCategory() {
                   </a>
                 </figure>
                 <h6>
-                  <a href="/productdetail">{datas.title}</a>
+                  <a href={`/productdetail/${datas._id}`}>{datas.title}</a>
                 </h6>
               </div>
             ))}
