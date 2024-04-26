@@ -25,6 +25,7 @@ import CategoryItem from "./components/categoryitem/CategoryItem";
 import Womentshirt from "./components/categoryitem/Womentshirt";
 import Kidtshirt from "./components/categoryitem/Kidtshirt";
 import ProductSearch from "./components/ProductSearch/ProductSearch";
+import Todo from "./components/todo/todo";
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
         <Route path="/furniture" element={<HomeFurniture />} />
         <Route path="/health" element={<Health />} />
         <Route path="/categorylist" element={<CategoryList />} />
-        <Route path="/productdetail/:_id" element={<ProductDetail />} />
+        <Route path="/productdetail/_id" element={<ProductDetail />} />
         <Route path="/productdetail" element={<ProductDetail />} />
         <Route path="/categorylist/:slug" element={<CategoryList />} />
         <Route path="/vendorstore" element={< VendorStore />} />
@@ -58,6 +59,7 @@ function App() {
         <Route path="/categoryitemwomen-t-shirt-s" element={< Womentshirt />} />
         <Route path="/categoryitemt-shirt" element={< Kidtshirt />} />
         <Route path="/productsearch" element={< ProductSearch />} />
+        <Route path="/todo" element={< Todo />} />
       </Routes>
     </>
   );
