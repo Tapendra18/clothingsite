@@ -1,169 +1,146 @@
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 
 function Todo() {
-  const [inputvalues, setInputValue] = useState({});
-  const [todoValue, setTodoValueGet] = useState([]);
-  const [editactive, setEditActive] = useState(false);
-  const [ editValue , setEditValue] = useState({});
-  console.log(editValue , "editValue")
+  const [inputValues, setInputValues] = useState({
+    title: "",
+    description: "",
+  });
+  const [todoList, setTodoList] = useState([]);
+  const [editActive, setEditActive] = useState(null);
+  const [editValues, setEditValues] = useState({ title: "", description: "" });
 
-  const handleInputValue = (e) => {
-    const { name, value } = e.target;
-    setInputValue({
-      ...inputvalues,
-      [name]: value,
-    });
+  const fetchTodos = async () => {
+    try {
+      const res = await axios.get("http://127.0.0.1:8000/api/v1/todoget");
+      setTodoList(res?.data?.data || []);
+    } catch (error) {
+      console.error("Error fetching todos:", error);
+    }
   };
 
-  const handleremove = async (e) => {
-    await axios
-      .get("http://127.0.0.1:8000/api/v1/todoget", {
-        headers: {
-          "access-control-allow-origin": "*",
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-      .then((res) => {
-        setTodoValueGet(res?.data?.data);
-      });
-  };
-
-  useEffect(async () => {
-    handleremove();
+  useEffect(() => {
+    fetchTodos();
   }, []);
 
-  const handleSubmitValue = async (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleEditChange = (e) => {
+    const { name, value } = e.target;
+    setEditValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios
-        .post("http://127.0.0.1:8000/api/v1/todoadd", {
-          title: inputvalues?.title,
-          description: inputvalues?.description,
-        })
-        .then((res) => console.log(res));
-      handleremove();
-    } catch {
-      console.log("error");
+      await axios.post("http://127.0.0.1:8000/api/v1/todoadd", inputValues);
+      setInputValues({ title: "", description: "" });
+      fetchTodos();
+    } catch (error) {
+      console.error("Error adding todo:", error);
     }
   };
 
-  const handleRemove = async (value) => {
-    try {
-      await axios.delete(
-        `http://127.0.0.1:8000/api/v1/tododelete/${value?._id}`
-      );
-      handleremove();
-    } catch {
-      console.log("error");
-    }
-  };
-
-  const handleEdit = async (e) => {
-    const { name, value } = e.target;
-    setEditValue({
-      ...editValue,
-      [name]: value,
+  const handleEdit = (todo, index) => {
+    setEditActive(index);
+    setEditValues({
+      title: todo.title,
+      description: todo.description,
     });
-  }
-
-  const handleEditValue = async (values) => {
-    console.log(values , "edit value");
-    setEditActive(true);
   };
 
-  const handleSaveValue = async (values) => {
-    console.log(values , "change value");
-    setEditActive(false);
+  const handleSave = async () => {
+    try {
+      await axios.put(
+        `http://127.0.0.1:8000/api/v1/todoupdate/${todoList[editActive]?._id}`,
+        editValues
+      );
+      fetchTodos();
+      setEditActive(null);
+      setEditValues({ title: "", description: "" });
+    } catch (error) {
+       console.error("Error saving todo:", error);
+    }
+  };
 
+  const handleRemove = async (todo) => {
+    try {
+      await axios.delete(`http://127.0.0.1:8000/api/v1/tododelete/${todo._id}`);
+      fetchTodos();
+    } catch (error) {
+      console.error("Error removing todo:", error);
+    }
   };
 
   return (
-    <>
-      <div>todo app</div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px",
-          padding: "15px",
-        }}
-      >
+    <div>
+      <h1>Todo App</h1>
+      <form onSubmit={handleSubmit}>
         <input
           name="title"
           type="text"
-          placeholder="add title"
-          onChange={handleInputValue}
+          placeholder="Add title"
+          value={inputValues.title}
+          onChange={handleChange}
         />
         <input
           name="description"
           type="text"
-          placeholder="add description"
-          onChange={handleInputValue}
+          placeholder="Add description"
+          value={inputValues.description}
+          onChange={handleChange}
         />
-
-        <button type="submit" onClick={handleSubmitValue}>
-          add todo
-        </button>
-      </div>
-
-      <div>get todo value</div>
+        <button type="submit">Add Todo</button>
+      </form>
 
       <div>
-        {todoValue?.length > 0 ? (
-          todoValue?.map((todoValue) => {
-            return (
+        {todoList.map((todo, index) => (
+          <div key={index} style={{ display: "flex", gap: "10px" }}>
+            {editActive === index ? (
               <>
-                {" "}
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "12px",
-                    padding: "15px",
-                  }}
-                >
-                  <input  type="text" value={todoValue?.title} name="title" onChange={handleEdit} />
-                  <input  type="text" value={todoValue?.description} name="description " onChange={handleEdit} />
-                  {editactive === true ? (
-                    <>
-                      <button
-                        type="submit"
-                        onClick={() => handleSaveValue(todoValue)}
-                      >
-                        save
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <button
-                        type="submit"
-                        onClick={() => handleEditValue(todoValue)}
-                      >
-                        edit
-                      </button>
-                    </>
-                  )}
-
-                  <button
-                    type="submit"
-                    style={{
-                      backgroundColor: "#ff3f3f",
-                    }}
-                    onClick={() => handleRemove(todoValue)}
-                  >
-                    remove
-                  </button>
-                </div>
+                <input
+                  name="title"
+                  type="text"
+                  value={editValues.title}
+                  onChange={handleEditChange}
+                />
+                <input
+                  name="description"
+                  type="text"
+                  value={editValues.description}
+                  onChange={handleEditChange}
+                />
+                <button type="submit" onClick={handleSave}>
+                  Save
+                </button>
               </>
-            );
-          })
-        ) : (
-          <>
-            <h1>add todo here </h1>
-          </>
-        )}
+            ) : (
+              <>
+                <input value={todo.title} />
+                <input value={todo.description} />
+                <button type="submit" onClick={() => handleEdit(todo, index)}>
+                  Edit
+                </button>
+              </>
+            )}
+            <button type="submit" onClick={() => handleRemove(todo)}>
+              Remove
+            </button>
+          </div>
+        ))}
+         <ToastContainer />
       </div>
-    </>
+    </div>
   );
 }
 
