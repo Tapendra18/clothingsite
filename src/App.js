@@ -26,6 +26,7 @@ import Womentshirt from "./components/categoryitem/Womentshirt";
 import Kidtshirt from "./components/categoryitem/Kidtshirt";
 import ProductSearch from "./components/ProductSearch/ProductSearch";
 import Todo from "./components/todo/todo";
+import Cricket from "./components/cricket/Cricket";
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
         <Route path="/categoryitemt-shirt" element={< Kidtshirt />} />
         <Route path="/productsearch" element={< ProductSearch />} />
         <Route path="/todo" element={< Todo />} />
+        <Route path="/cricket" element={< Cricket />} />
       </Routes>
     </>
   );
